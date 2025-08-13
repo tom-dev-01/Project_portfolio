@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for the message box */
+        #message-box {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #ffffff;
+            padding: 16px 24px;
+            border-radius: 8px;
+            z-index: 10;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+        #message-box.show {
+            display: block;
+        }
+        /* Custom styles for the loading spinner */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid #ffffff;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+            margin-bottom: 8px;
+        }
+
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 10;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loading-overlay.show {
+            display: flex;
+        }
+
+    </style>
+</head>
+<body class="bg-gray-100 font-roboto">
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="spinner"></div>
+        <p class="text-white text-lg">Loading...</p>
+    </div>
+
+    <div id="message-box"></div>
+
+    <div class="container mx-auto px-4 py-10">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">My Weather App</h1>
+            <div class="text-gray-600 text-sm">Get current weather and forecast</div>
+        </div>
+
+        <div class="flex justify-center mb-6">
+            <div class="w-full md:w-3/4 lg:w-1/2 flex items-center space-x-4">
+                <input
+                    type="text"
+                    id="location-input"
+                    placeholder="Enter location (city, zip code, etc.)"
+                    class="flex-grow px-4 py-2 rounded-md border border-gray-300 focus:border-blue-500 focus:ring-blue-500 bg-white text-gray-700 placeholder-gray-400 shadow-sm"
+                />
+                <button id="search-button" class="bg-gray-700 hover:bg-gray-800 text-white px-6 py-2 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-gray-500 transition-colors duration-300">
+                    Search
+                </button>
+            </div>
+        </div>
+
+        <div id="weather-data" class="bg-white rounded-lg shadow-md p-6 text-center">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Current Weather: --</h2>
+            <div id="current-weather" class="mb-4">
+                <p class="text-gray-700">Loading current weather...</p>
+            </div>
+            <h2 class="ìtext-2xl font-semibold text-gray-800 mt-8 mb-4">Forecast: --</h2>
+            <div id="forecast-weather" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <p class="text-gray-700">Loading forecast...</p>
+            </div>
+            <div id="error-message" class="text-red-500 text-center mt-4"></div>
+        </div>
+    </div>
+
+    <script>
+        const locationInput = document.getElementById("location-input");
+        const searchButton = document.getElementById("search-button");
+        const weatherDataElement = document.getElementById("weather-data");
+        const currentWeatherElement = document.getElementById("current-weather");
+        const forecastWeatherElement = document.getElementById("forecast-weather");
+        const messageBox = document.getElementById("message-box");
+        const loadingOverlay = document.getElementById("loading-overlay");
+
+        // Function to show a message
+        function showMessage(message, type = 'success') {
+            messageBox.textContent = message;
+            messageBox.className = `fixed top-4 left-1/2 transform -translate-x-1/2 bg-${type === 'success' ? 'green' : 'red'}-500 text-white px-4 py-2 rounded shadow-lg z-10`;
+            messageBox.classList.add('show');
+            setTimeout(() => {
+                messageBox.classList.remove('show');
+            }, 3000);
+        }
+
+        // Function to fetch weather data from OpenWeatherMap API
+        async function getWeatherData(location, type = 'weather') {
+            const apiKey = "d9c743b993e464a9e904370e7b22c1e3";  // Replace with your API key
+            let url = '';
+            if (type === 'weather') {
+                url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`;
+            } else if (type === 'forecast') {
+                url = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}&units=metric`;
+            }
+
+            loadingOverlay.classList.add('show');
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error(`Error fetching ${type} data:`, error);
+                showMessage(`Error: ${error.message || 'Failed to fetch data'}`, 'error');
+                return null;
+            } finally {
+                loadingOverlay.classList.remove('show');
+            }
+        }
+
+        // Function to display current weather
+        function displayCurrentWeather(data) {
+            if (!data) {
+                currentWeatherElement.innerHTML = `<p class="text-gray-700">No current weather data to display.</p>`;
+                return;
+            }
+
+            const { name, main, weather, wind, sys } = data;
+            const temperature = main.temp.toFixed(1);
+            const description = weather[0].description;
+            const iconUrl = `https://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
+            const windSpeed = wind.speed.toFixed(1);
+            const humidity = main.humidity;
+            const sunriseTime = new Date(sys.sunrise * 1000).toLocaleTimeString();
+            const sunsetTime = new Date(sys.sunset * 1000).toLocaleTimeString();
+
+            const weatherHTML = `
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">${name}</h3>
+                <div class="flex items-center justify-center mb-2">
+                    <img src="${iconUrl}" alt="${description}" class="w-12 h-12 mr-2">
+                    <p class="text-lg text-gray-700 capitalize">${description}</p>
+                </div>
+                <p class="text-2xl font-bold text-gray-800 mb-2">${temperature}°C</p>
+                <div class="grid grid-cols-2 gap-2 text-gray-600 text-sm">
+                    <div>
+                        <p><span class="font-semibold">Wind:</span> ${windSpeed} m/s</p>
+                        <p><span class="font-semibold">Humidity:</span> ${humidity}%</p>
+                    </div>
+                    <div>
+                        <p><span class="font-semibold">Sunrise:</span> ${sunriseTime}</p>
+                        <p><span class="font-semibold">Sunset:</span> ${sunsetTime}</p>
+                    </div>
+                </div>
+            `;
+            currentWeatherElement.innerHTML = weatherHTML;
+        }
+
+        // Function to display forecast
+        function displayForecast(data) {
+            if (!data || !data.list) {
+                forecastWeatherElement.innerHTML = `<p class="text-gray-700">No forecast data to display.</p>`;
+                return;
+            }
+
+            let forecastHTML = '';
+            // Display forecast for the next 2 days, every 12 hours.
+            for (let i = 0; i < data.list.length; i += 4) {
+                const forecastItem = data.list[i];
+                const dateTime = forecastItem.dt_txt;
+                const temperature = forecastItem.main.temp.toFixed(1);
+                const description = forecastItem.weather[0].description;
+                const iconUrl = `https://openweathermap.org/img/wn/${forecastItem.weather[0].icon}@2x.png`;
+
+                forecastHTML += `
+                    <div class="bg-gray-50 rounded-md p-4 shadow-md">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-2">${dateTime}</h4>
+                        <div class="flex items-center justify-center mb-2">
+                            <img src="${iconUrl}" alt="${description}" class="w-10 h-10 mr-2">
+                            <p class="text-md text-gray-700 capitalize">${description}</p>
+                        </div>
+                        <p class="text-xl font-bold text-gray-800">${temperature}°C</p>
+                    </div>
+                `;
+            }
+            forecastWeatherElement.innerHTML = forecastHTML;
+        }
+
+        // Event listener for the search button
+        searchButton.addEventListener("click", async () => {
+            const location = locationInput.value.trim();
+            if (!location) {
+                showMessage("Please enter a location", 'error');
+                return;
+            }
+
+            const currentWeather = await getWeatherData(location, 'weather');
+            const forecastData = await getWeatherData(location, 'forecast');
+
+            displayCurrentWeather(currentWeather);
+            displayForecast(forecastData);
+        });
+
+        // Event listener for the Enter key in the input field
+        locationInput.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                searchButton.click();
+            }
+        });
+    </script>
+</body>
+</html>
