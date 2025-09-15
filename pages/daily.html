@@ -1,1113 +1,414 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
- <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-videopreview:-1">
- <title>Daily</title>
- <meta name="description" content="Daily gym advertisement.">
- <meta property="og:locale" content="en_US">
- <meta property="og:type" content="article">
- <meta property="og:title" content="Daily gym">
- <meta property="og:description" content="Daily gym advertisement.">
- <meta property="og:url" content="https://pending/">
- <meta property="og:site_name" content="Daily gym">
- <meta property="article:published_time" content="2024-11-27T12:00:52+00:00">
- <meta property="article:modified_time" content="2024-11-28T15:05:08+00:00">
- <meta property="og:image:width" content="1280">
- <meta property="og:image:height" content="769">
- <meta property="og:image:type" content="image/png">
- <meta name="author" content="Daily gym Staff">
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" 
-rel="stylesheet">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" 
-rel="stylesheet">
- <script src="https://cdn.tailwindcss.com"></script>
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fontawesome/6.0.0/css/all.min.css" integrity="sha512-
-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg
-==" crossorigin="anonymous" referrerpolicy="no-referrer" />
- <style>
- body {
- font-family: 'Inter', sans-serif; /* More modern font */
- color: #333;
- background-color: #f7f7f7;
- margin: 0;
- padding: 0;
- }
- h1, h2, h3 {
- font-family: 'Lora', serif; /* Elegant heading font */
- color: #2c3e50;
- font-weight: 600;
- margin-bottom: 0.5em;
- }
- h1 {
- font-size: 2.5rem;
- }
- h2 {
- font-size: 2rem;
- }
- h3 {
- font-size: 1.5rem;
- }
- p {
- font-size: 1.1rem;
- line-height: 1.7;
- color: #555;
- margin-bottom: 1em;
- }
- a {
- color: #0078d7;
- text-decoration: none;
- transition: color 0.3s ease;
- }
- a:hover {
- color: #0056b3;
- }
- .container {
- max-width: 1200px;
- margin: 0 auto;
- padding: 0 20px;
- }
- .header-top {
- background-color: #34495e;
- color: white;
- padding: 1rem 0;
- text-align: center;
- }
- .header-top-inner {
- display: flex;
- justify-content: center;
- align-items: center;
- }
- .header-top-tagline {
- font-family: 'Lora', serif;
- font-style: italic;
- font-size: 1.2rem;
- }
- .header-main {
- background-color: #fff;
- padding: 2rem 0;
- text-align: center;
- }
- .header-main h1 {
- margin: 0;
- font-size: 3rem;
- letter-spacing: 0.1em;
- color: #2c3e50;
- }
- .header-mobile {
- display: none;
- }
- .content {
- display: flex;
- flex-wrap: wrap;
- gap: 2rem;
- padding: 2rem 0;
- }
- .content-left {
- flex: 2;
- min-width: 60%;
- }
- .content-right {
- flex: 1;
- min-width: 30%;
- }
- .entry {
- background-color: #fff;
- padding: 2rem;
- border-radius: 8px;
- box-shadow: 0 2px 5px rgba(0,0,0,0.1);
- }
- .entry-header {
- margin-bottom: 1.5rem;
- }
- .entry-title {
- font-size: 2.2rem;
- margin-bottom: 0.75rem;
- }
- .entry-meta {
- color: #7f8c8d;
- font-size: 0.9rem;
- margin-bottom: 1rem;
- }
- .entry-thumb {
- margin-bottom: 1.5rem;
- }
- .entry-thumb img {
- width: 100%;
- border-radius: 8px;
- box-shadow: 0 2px 5px rgba(0,0,0,0.1);
- }
- .entry-text {
- font-size: 1.1rem;
- line-height: 1.7;
- color: #555;
- margin-bottom: 1em;
- }
- .entry-text h2 {
- font-size: 1.8rem;
- margin: 1.5rem 0 1rem;
- color: #2c3e50;
- }
- .gallery {
- display: flex;
- flex-wrap: wrap;
- gap: 1rem;
- margin: 1.5rem 0;
- }
- .gallery-item {
- flex: 1;
- min-width: 30%;
- }
- .gallery-icon img {
- width: 100%;
- border-radius: 8px;
- box-shadow: 0 2px 5px rgba(0,0,0,0.1);
- }
- .pp-multiple-authors-boxes-wrapper {
- margin-top: 2rem;
- padding: 1.5rem;
- background-color: #ecf0f1;
- border-radius: 8px;
- border: 1px solid #bdc3c7;
- }
- .ppma-layout-prefix {
- display: block;
- font-size: 1.1rem;
- font-weight: 600;
- color: #3498db;
- margin-bottom: 0.5rem;
- }
- .ppma-author-name {
- font-size: 1.2rem;
- font-weight: 700;
- color: #2c3e50;
- margin-bottom: 0.25rem;
- }
- .ppma-author-description {
- font-size: 1rem;
- color: #7f8c8d;
- line-height: 1.6;
- }
- .sidebar {
- background-color: #fff;
- padding: 2rem;
- border-radius: 8px;
- box-shadow: 0 2px 5px rgba(0,0,0,0.1);
- }
- .widget {
- margin-bottom: 2rem;
- }
- .widget-title {
- font-size: 1.5rem;
- margin-bottom: 1.5rem;
- color: #2c3e50;
- border-bottom: 2px solid #3498db;
- padding-bottom: 0.5rem;
- }
- .gform_wrapper {
- padding: 1.5rem;
- border-radius: 8px;
- background-color: #f0f0f0;
- }
- .gfield {
- margin-bottom: 1.5rem;
- }
- .gfield label {
- display: block;
- font-size: 0.9rem;
- font-weight: 600;
- color: #7f8c8d;
- margin-bottom: 0.5rem;
- }
- .ginput_container input,
- .ginput_container textarea,
- .ginput_container select {
- width: 100%;
- padding: 0.75rem;
- border: 1px solid #bdc3c7;
- border-radius: 4px;
- font-size: 1rem;
- transition: border-color 0.3s ease;
- }
- .ginput_container input:focus,
- .ginput_container textarea:focus,
- .ginput_container select:focus {
- outline: none;
- border-color: #3498db;
- box-shadow: 0 0 0 2px rgba(52,152,219,0.25);
- }
- textarea {
- resize: vertical;
- height: 100px;
- }
- .gform_button {
- padding: 0.75rem 1.5rem;
- background-color: #3498db;
- color: white;
- border: none;
- border-radius: 4px;
- font-size: 1.1rem;
- cursor: pointer;
- transition: background-color 0.3s ease;
- }
- .gform_button:hover {
- background-color: #2980b9;
- }
- .widget-acf-about {
- border-radius: 8px;
- overflow: hidden;
- position: relative;
- }
- .widget-acf-about img {
- width: 100%;
- display: block;
- transition: transform 0.3s ease;
- }
- .widget-acf-about:hover img {
- transform: scale(1.05);
- }
- .widget-acf-about-mask {
- position: absolute;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- background-color: rgba(0,0,0,0.5);
- display: flex;
- align-items: center;
- justify-content: center;
- opacity: 0;
- transition: opacity 0.3s ease;
- }
- .widget-acf-about:hover .widget-acf-about-mask {
- opacity: 1;
- }
- .widget-acf-about-meta {
- color: white;
- text-align: center;
- }
- .widget-acf-about-meta h2 {
- font-size: 1.5rem;
- margin-bottom: 0.5rem;
- }
- .widget-acf-about-meta h3 {
- font-size: 1.2rem;
- margin-bottom: 1rem;
- }
- .widget-acf-about-more {
- display: inline-flex;
- align-items: center;
- gap: 0.5rem;
- font-size: 1rem;
- font-weight: 600;
- }
- .footer-top {
- background-color: #2c3e50;
- color: white;
- padding: 2rem 0;
- text-align: center;
- }
- .footer-top-inner {
- display: flex;
- flex-wrap: wrap;
- justify-content: space-between;
- align-items: center;
- gap: 1rem;
- }
- .footer-button {
- padding: 0.75rem 1.5rem;
- background-color: #3498db;
- color: white;
- border: none;
- border-radius: 4px;
- font-size: 1.1rem;
- cursor: pointer;
- transition: background-color 0.3s ease;
- }
- .footer-button:hover {
- background-color: #2980b9;
- }
- .footer-top-menu {
- display: flex;
- flex-wrap: wrap;
- gap: 1rem;
- justify-content: center;
- }
- .footer-top-nav {
- display: flex;
- gap: 1rem;
- list-style: none;
- padding: 0;
- margin: 0;
- }
- .footer-top-nav li {
- font-size: 1rem;
- }
- .footer-top-nav li div {
- color: white;
- text-decoration: none;
- transition: color 0.3s ease;
- }
- .footer-top-nav li div:hover {
- color: #3498db;
- }
- .footer-nav-line {
- height: 1px;
- background-color: #7f8c8d;
- margin: 1rem 0;
- width: 100%;
- }
- .footer-social {
- display: flex;
- gap: 1rem;
- list-style: none;
- padding: 0;
- margin: 0;
- }
- .footer-social li a {
- color: white;
- font-size: 1.5rem;
- transition: color 0.3s ease;
- }
- .footer-social li a:hover {
- color: #3498db;
- }
- @media (max-width: 768px) {
- .header-desktop {
- display: none;
- }
- .header-mobile {
- display: block;
- background-color: #fff;
- padding: 1rem 0;
- text-align: center;
- }
- .header-mobile h1 {
- margin: 0;
- font-size: 2.5rem;
- color: #2c3e50;
- }
- .header-mobile h4 {
- font-size: 1.1rem;
- color: #7f8c8d;
- font-family: 'Lora', serif;
- font-style: italic;
- }
- .content {
- flex-direction: column;
- }
- .content-left,
- .content-right {
- width: 100%;
- min-width: auto;
- }
- .gallery-item {
- min-width: 45%;
- }
- .footer-top-inner {
- flex-direction: column;
- gap: 1.5rem;
- text-align: center;
- }
- .footer-top-menu {
- flex-direction: column;
- }
- .footer-top-nav {
- flex-direction: column;
- text-align: center;
- }
- .footer-social {
- justify-content: center;
- }
- }
- </style>
-
-  <style>
-
-    /**********************************************************
-    // Media Queries
-    **********************************************************/
-    @media
-    all and (max-width: 1350px),
-    all and (max-device-width: 1350px)
-    {
-      .Header-Top-Tagline { font-size: 0; }
-
-      .Footer-Top-Left {
-        margin: auto;
-        float: none;
-      }
-
-      .Footer-Top-Right {
-        margin: 20px auto 0 auto;
-        text-align: center;
-        float: none;
-      }
-    }
-
-    @media
-    all and (max-width: 1150px),
-    all and (max-device-width: 1150px)
-    {
-      .Content-Left { width: 65%; }
-    }
-
-
-    @media
-    (max-width: 1000px), (max-device-width: 1000px)
-    {
-      .Header-Desktop { display: none; }
-      .Header-Mobile { display: block; }
-
-      .Content-Left {
-        margin: auto;
-        width: 100%;
-        max-width: 100%;
-        float: none;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Gym</title>
+    <meta name="description" content="Daily gym advertisement.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
         }
 
-      .Content-Right {
-        margin: 20px auto 0 auto;
-        float: none;
+        h1, h2, h3 {
+            font-family: 'Lora', serif;
+            color: #2c3e50;
+            font-weight: 600;
         }
 
-      .Home-Load-Mobile { display: block; }
-      .Home-Load-Desktop { display: none; }
-
-    }
-
-    @media
-    all and (max-width: 900px),
-    all and (max-device-width: 900px)
-    {
-      .Content { padding: 20px 20px; }
-
-      .Footer-IG-Left {
-        margin: auto;
-        width: 100%;
-        text-align: center;
-        display: block;
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.5rem; }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 1em;
         }
 
-      .Footer-IG-Right {
-        margin: 20px auto 0 auto;
-        width: 100%;;
-        display: block;
+        a {
+            color: #0078d7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover { color: #0056b3; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-      .Footer-Nav-Line { display: none; }
-      .Footer-Top-Nav {
-        margin: 10px auto 0 auto;
-        display: block;
+        .header-top {
+            background-color: #34495e;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
         }
 
-      .Footer-Cats li {
-        margin: 10px auto 0 auto;
-        width: 100%;
-        display: block;
+        .header-top-tagline {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+        }
+        .header-main {
+            background-color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        .header-main h1 {
+            margin: 0;
+            font-size: 3rem;
+            letter-spacing: 0.1em;
+            color: #2c3e50;
         }
 
-      .Excerpt-Large { margin: auto; }
+        .header-mobile { display: none; }
 
-      .Excerpt-Large-Left {
-        margin: auto;
-        width: 100%;
-        max-width: 520px;
-        height: 300px;
-        display: block;
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 2rem 0;
+            align-items: flex-start;
+        }
+        .content-left { 
+            flex: 2; 
+            min-width: 60%;
+            flex-basis: 65%;
+            max-width: 65%;
+        }
+        .content-right { 
+            flex: 1; 
+            min-width: 30%; 
+            flex-basis: 30%;
+            max-width: 30%;
+        }
+        .content-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .entry {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-      .Excerpt-Large-Main { margin: auto; }
-      .Excerpt-Large-Right {
-        margin: 20px auto 0 auto;
-        padding: 0 20px;
-        width: 100%;
-        display: block;
+        .entry-header { margin-bottom: 1.5rem; }
+
+        .entry-title {
+            font-size: 2.2rem;
+            margin-bottom: 0.75rem;
+        }
+        .entry-thumb img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            height: auto;
+            object-fit: cover;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            justify-content: center;
         }
 
-      .Excerpt-Large-Line { display: block; }
-      .Excerpt-Large-More { margin-top: 20px; }
-
-      .Home-Featured-Posts { max-width: 370px; padding: 0 20px; }
-      .Home-Featured-Posts-List article:last-child { width: 100%; }
-      .Home-Featured-Posts-List article:first-child { margin-top: 20px; }
-      .Excerpt-Small-Mobile { display: block; }
-      .Excerpt-Small {
-        margin: 30px auto 0 auto;
-        padding: 0;
-        width: 100%;
-        max-width: 350px;
-        display: block;
+        .gallery-item {
+            flex: 1 1 30%;
+            min-width: 250px;
         }
 
-      .Excerpt-Small-Main {
-        height: unset;
-        background: #FFF !important;
+        .gallery-icon img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            height: auto;
+            object-fit: cover;
         }
 
-      .Excerpt-Small-Title { margin-top: 8px; }
+        .sidebar {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .gform_wrapper {
+            padding: 1.5rem;
+            border-radius: 8px;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .gfield label {
+            font-weight: 500;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .gfield input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .gform_button {
+            padding: 0.75rem 1.5rem;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .gform_button:hover { background-color: #2980b9; }
 
-      .Excerpt-Small-Main a { color: #30394A; }
-      .Excerpt-Small-Shade {
-        background: transparent;
-        position: relative;
+        .widget { margin-bottom: 2rem; }
+
+        .widget-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
         }
 
-      .Excerpt-Small-Info {
-        padding: 20px 0 0 0;
-        position: relative;
+        .footer-top {
+            background-color: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
         }
-
-      .Excerpt-Small-Cat hr { border-bottom: 2px solid #1F2C7A; }
-      .Excerpt-Small-Meta { display: none; }
-      .Excerpt-Small-More { display: none; }
-
-      .Home-About {
-        margin: 40px auto 0 auto;
-        padding: 30px 20px;
+        .footer-top-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
         }
-
-      .Home-About-Quote-Text { margin: 20px auto 0 auto; }
-      .Home-About-Quote {
-        margin: auto;
-        width: 100%;
-        max-width: 350px;
-        display: block;
+        .footer-top-menu {
+            display: flex;
+            align-items: center;
         }
-
-      .Home-About-Image {
-        margin: 20px auto 0 auto;
-        width: 100%;
-        display: block;
+        .footer-button {
+            padding: 0.75rem 1.5rem;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
+        .footer-button:hover { background-color: #2980b9; }
 
-      .Home-About-Main {
-        margin: 20px auto 0 auto;
-        width: 100%;
-        max-width: 350px;
-        display: block;
+        .footer-top-nav ul {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
-
-      .Home-About-Button { display: block; text-align: center; }
-
-      .Shop-Featured > ul > li { width: 48%; }
-    }
-
-    @media
-    all and (max-width: 768px),
-    all and (max-device-width: 768px)
-    {
-
-      .Mobile-Only { display: block; }
-      .Desktop-Only { display: none; }
-
-      .Home-Banner { padding-top: 45px; }
-
-      .Header-Ad { padding: 0; }
-      .Footer-Top-Nav-Right { display: none; }
-
-      .Excerpt-Left {
-        margin: auto;
-        width: 100%;
-        max-width: 400px;
-        height: 300px;
-        display: block;
+        .footer-top-nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
-
-      .Excerpt-Right {
-        margin: 20px auto 0 auto;
-        padding: 0;
-        width: 100%;
-        display: block;
+        .footer-top-nav a:hover { color: #3498db; }
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
-
-      .Entry-Meta .Entry-Social .AFONES-Share-Links { margin: 0; }
-      .Entry-Meta .Entry-Social {
-        margin: 20px 0 0 0;
-        width: 100%;
-        text-align: left;
-        float: left;
+        .footer-social a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
         }
+        .footer-social a:hover { color: #3498db; }
 
-      .About-ASI img {
-        margin: 10px auto 0 auto;
-        width: 100%;
-        display: block;
+        @media (max-width: 1024px) {
+            .content-left, .content-right {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
         }
-
-      .About-ASI h3 {
-        margin: auto;
-        display: block;
+        @media (max-width: 768px) {
+            .header-desktop { display: none; }
+            .header-mobile { display: block; }
+            .content { flex-direction: column; }
+            .content-left, .content-right {
+                width: 100%;
+                min-width: auto;
+            }
+            .gallery-item { min-width: 45%; }
+            .footer-top-inner { flex-direction: column; }
+            .footer-top-menu { flex-direction: column; }
+            .footer-top-nav { flex-direction: column; text-align: center; }
+            .footer-social { justify-content: center; }
         }
-
-      .Shop-Brand {
-        padding: 0 10px;
-        width: 100%;
-        display: block;
-        }
-
-      .Popup-Outer { margin: 20px auto 0 auto; }
-
-      .Author-Profile { padding: 30px 10px; }
-
-      .Author-Profile-Left {
-        margin: auto;
-        width: 100%;
-        display: block;
-        }
-
-      .Author-Profile-Right h2 { text-align: center; }
-      .Author-Profile-Right {
-        margin: 30px auto 0 auto;
-        padding-left: 0;
-        width: 100%;
-        display: block;
-        }
-
-      .Entry-Text > .mp_wrapper { padding: 30px 20px; }
-    }
-
-    @media
-    all and (max-width: 600px),
-    all and (max-device-width: 600px)
-    {
-      .Entry-NP-Prev {
-        margin: 10px auto;
-        width: 100%;
-        max-width: 100%;
-        float: none;
-        }
-
-
-      .Entry-NP-Next {
-        margin: 10px auto;
-        width: 100%;
-        max-width: 100%;
-        float: none;
-        }
-
-      .Entry-Title { font-size: 25px; line-height: 35px }
-      .Entry-Meta > ul { font-size: 12px; }
-
-      .Entry-Related li {
-        margin: 0 2%;
-        width: 46% !important;
-        }
-
-      .Shop-Featured > ul > li {
-        margin: 20px auto 0 auto;
-        width: 100%;
-        display: block;
-        }
-
-      .Shop-Info-Boxes li {
-        margin: 30px auto 0 auto;
-        width: 100%;
-        display: block;
-        }
-
-      .Shop-Info-Boxes li:nth-child(2n+1) { margin-right: auto; }
-      .Shop-Info-Boxes li:nth-child(2n+2) { margin-left: auto; }
-
-      .Shop-Filters-Reset {
-        margin: 10px auto 0 auto;
-        position: relative;
-        top: 0;
-        }
-
-      .Shop-Filters-List ul {
-        margin: 35px auto 0 auto;
-        display: block;
-        }
-
-      .yuzo_related_post .relatedthumb { max-width: 50%; }
-
-      body .bookshelf .perspective {
-          float: none;
-          padding: 0;
-          width: 100%;
-      }
-
-      body .bookshelf .buttons {
-          float: none;
-          clear: left;
-          width: 100%;
-      }
-
-      body .bookshelf figcaption h2 { text-align: center; }
-    }
-
-    @media
-    all and (max-width: 400px),
-    all and (max-device-width: 400px)
-    {
-
-      .Entry-NP-Prev-Thumb, .Entry-NP-Next-Thumb { width: 45%; }
-      .Entry-NP-Prev-Main {
-        padding-top: 0px;
-        width: 50%;
-        }
-
-      .Entry-NP-Next-Main {
-        padding-top: 0px;
-        width: 50%;
-        }
-
-      .Entry-NP-Prev-Title, .Entry-NP-Next-Title {
-        font-size: 12px;
-        line-height: 18px;
-        padding-top: 5px !important;
-      }
-
-      .Entry-NP-Next { margin-top: 20px; }
-    }
-
-    @media
-    all and (max-width: 359px),
-    all and (max-device-width: 359px)
-    {
-      .Content {
-        padding-left: 0;
-        padding-right: 0;
-        }
-    }
-
-  </style>
-  
-    
+    </style>
 </head>
 <body>
- <aside id="Popup-Newsletter" class="Popup-Overlay" style="display: none;">
- <div class="Popup-Outer">
- <div class="Popup-Inner">
- </div>
- </div>
- </aside>
- <div id="Wrapper-Outer">
- <div id="Wrapper-Inner">
- <header class="Header-Top Header-Desktop CLR">
- <div class="Header-Top-Inner CLR">
- <div class="Header-Top-Tagline">Your physical health is our priority</div>
- </div>
- </header>
- <header class="Header-Main CLR Header-Desktop">
- <h1><b>DAILY</b></h1>
- </header>
- <header class="Header-Mobile CLR">
- <div class="Header-Main CLR">
- <h1><b>DAILY</b></h1>
- </div>
- <h4 class="Header-Tagline">Your physical health is our priority</h4>
- </header>
- <div class="Content CLR">
- <div class="Content-Left">
- <article id="post-1093486" class="Entry CLR post-1093486 post type-post status-publish 
-format-standard has-post-thumbnail hentry category-fashion-2 category-health category-shoppingguides category-sponsored tag-arms-of-andes tag-harvest-mill tag-icebreaker tag-nazeerah tag-nontoxic-black-friday tag-non-toxic-cyber-monday tag-non-toxic-holiday-shopping mv-content-wrapper">
- <header class="Entry-Header">
- <div class="Entry-Cats"></div>
- <h1 class="Entry-Title">Enroll in the Daily programs to achieve fitness and greatness as 
-you enjoy world-class gym and yoga services.</h1>
- </header>
- <div class="Entry-Main CLR">
- <div class="Entry-Thumb">
- <img src="/Static/samuel-girven-fqMu99l8sqo-unsplash.jpg" alt="Gym Fitness" 
-class="attachment-AF-Feature size-AF-Feature wp-post-image">
- </div>
- <div class="Entry-Text">
- <p>Ready to transform your body and mind? At Daily, we offer a modern, fullyequipped fitness center designed for all fitness levels. Whether you're a beginner or a seasoned athlete, 
-our expert trainers provide personalized workout plans tailored to your goals. Enjoy a variety of classes, 
-from strength training and cardio to yoga and high-intensity interval training (HIIT), all in a motivating, 
-supportive environment. Plus, with online classes and virtual training options, you can stay on track 
-anytime, anywhere. Join our community today and unlock your full potential!</p>
- <p>At Daily, you’ll experience a comprehensive fitness journey tailored to your needs. 
-Expect cutting-edge gym equipment, including free weights, cardio machines, and functional training 
-areas. Our certified trainers will guide you through personalized workout programs designed to help you 
-achieve your goals, whether it’s building strength, improving endurance, or losing weight. You’ll also 
-have access to a variety of group classes—such as yoga, cycling, HIIT, and strength training—designed to 
-keep you motivated and challenged. With a clean, welcoming environment, supportive staff, and flexible 
-membership options, we ensure a fitness experience that fits your lifestyle. Join us and start your 
-transformation today!</p>
- <h2>Gym sector</h2>
- <div id="gallery-2" class="gallery galleryid-1093486 gallery-columns-3 gallery-sizefull">
- <figure class="gallery-item">
- <div class="gallery-icon portrait">
- <div>
- <img src="/Static/sushil-ghimire-5UbIqV58CW8-unsplash.jpg" alt="Gym 
-Equipment" class="attachment-full size-full">
- </div>
- </div>
- </figure>
- <figure class="gallery-item">
- <div class="gallery-icon portrait">
- <div>
- <img src="/Static/daniel-apodaca-WdoQio6HPVA-unsplash.jpg" alt="Personal 
-Training" class="attachment-full size-full">
- </div>
- </div>
- </figure>
- <figure class="gallery-item">
- <div class="gallery-icon portrait">
- <div>
- <img src="/Static/victor-freitas-Yuv-iwByVRQ-unsplash.jpg" alt="Gym 
-Interior" class="attachment-full size-full">
- </div>
- </div>
- </figure>
- </div>
- <h2>Yoga sector</h2>
- <p>Discover inner peace and physical strength with Daily. Our online platform offers a 
-variety of yoga classes for all levels—whether you’re a beginner or advanced practitioner. From relaxing 
-restorative sessions to invigorating vinyasa flows, our experienced instructors guide you through every 
-pose with care and precision. Enjoy live classes, on-demand videos, and personalized yoga plans that fit 
-your schedule and goals. Our community provides a supportive, non-judgmental space for mindfulness, 
-wellness, and growth. Whether you're looking to improve flexibility, reduce stress, or build strength, 
-Daily helps you transform your body and mind. Join today at Daily.</p>
- <p>At Daily, you'll find a comprehensive online platform designed to support your 
-yoga practice from anywhere. Expect a variety of classes catering to all levels—beginner, intermediate, 
-and advanced. Our expert instructors guide you through different styles, including Vinyasa, Hatha, 
-Restorative, and Power Yoga, each aimed at enhancing flexibility, strength, and mindfulness. You'll have 
-access to live, interactive classes, as well as an extensive library of on-demand videos that you can watch 
-at your convenience. Additionally, we offer personalized yoga plans to help you achieve specific goals, 
-whether it's stress reduction, improved posture, or overall wellness. Our supportive community 
-encourages growth and balance, helping you stay committed to your practice.</p>
- <p>We are open from Monday to Sunday, 4:00 AM to 10:00 PM. Get a 20% discount 
-for monthly subscribers. We also offer other services like massage. Make it quick by pressing the submit 
-button to enroll in our plan.</p>
- <div id="gallery-4" class="gallery galleryid-1093486 gallery-columns-3 gallery-sizefull">
- <figure class="gallery-item">
- <div class="gallery-icon portrait">
- <div>
- <img src="/Static/jared-rice-NTyBbu66_SI-unsplash.jpg" alt="Yoga Class" 
-class="attachment-full size-full">
- </div>
- </div>
- </figure>
- <figure class="gallery-item">
- <div class="gallery-icon portrait">
- <div>
- <img src="/Static/antonika-chanel-zTgFtM6M9Gs-unsplash.jpg" alt="Yoga 
-Instructor" class="attachment-full size-full">
- </div>
- </div>
- </figure>
- <figure class="gallery-item">
- <div class="gallery-icon portrait">
- <div>
- <img src="/Static/tammy-gann-610V59jwByI-unsplash.jpg" alt="Yoga Pose" 
-class="attachment-full size-full">
- </div>
- </div>
- </figure>
- </div>
- <div class="pp-multiple-authors-boxes-wrapper pp-multiple-authors-wrapper 
-multiple-authors-target-the-content box-post-id-1092975 box-instance-id-1 ppma_boxes_1092975" 
-data-post_id="1092975" data-instance_id="1" data-additional_class="multiple-authors-target-thecontent" data-original_class="pp-multiple-authors-boxes-wrapper pp-multiple-authors-wrapper boxpost-id-1092975 box-instance-id-1">
- <span class="ppma-layout-prefix">About the Author</span>
- <div class="ppma-author-name">Daily Gym Staff</div>
- <div class="ppma-author-description">
- The Daily Gym Staff is committed to providing you with the best fitness 
-experience.
- Our certified trainers and instructors are here to help you achieve your health and 
-wellness goals.
- </div>
- </div>
- </div>
- </div>
- <div class="Entry-Related"></div>
- <div class="Entry-Comments">
- <div id="disqus_thread"></div>
- </div>
- </article>
- </div>
- <div class="Content-Right">
- <section class="Sidebar CLR">
- <aside id="gform_widget-2" class="widget gform_widget">
- <h1 class="widget-title">Register now</h1>
- <div class="gf_browser_unknown gform_wrapper gform-theme gform-theme--
-foundation gform-theme--framework gform-theme--orbital" data-form-theme="orbital" data-formindex="0" id="gform_wrapper_2">
- <div id="gf_2" class="gform_anchor" tabindex="-1"></div>
- <form method="post" enctype="multipart/form-data" target="gform_ajax_frame_2" 
-id="gform_2" action="https://google.com/" data-formid="2" novalidate="" data-active-form="true">
- <div class="gform-body gform_body">
- <div id="gform_fields_2" class="gform_fields top_label form_sublabel_below 
-description_below validation_below">
- <div id="field_2_7" class="gfield gfield--type-html gfield--input-type-html gfield-
--width-full gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--nodescription field_description_below gfield_validation_below gfield_visibility_visible" data-jsreload="field_2_7">
- <h3>Submit your details to be part of the community.</h3>
- </div>
- <div id="field_2_1" class="gfield gfield--type-text gfield--input-type-text 
-gfield_contains_required field_sublabel_below gfield--no-description field_description_below 
-hidden_label field_validation_below gfield_visibility_visible" data-js-reload="field_2_1">
- <div class="ginput_container ginput_container_text">
- <input name="input_1" id="input_2_1" type="text" value="" class="large" 
-placeholder="First Name" aria-required="true" aria-invalid="false">
- </div>
- </div>
- <div id="field_2_3" class="gfield gfield--type-text gfield--input-type-text gfield--
-width-full field_sublabel_below gfield--no-description field_description_below hidden_label 
-field_validation_below gfield_visibility_visible" data-js-reload="field_2_3">
- <div class="ginput_container ginput_container_text">
- <input name="input_3" id="input_2_3" type="text" value="" class="large" 
-placeholder="Last Name" aria-invalid="false">
- </div>
- </div>
- <div id="field_2_4" class="gfield gfield--type-email gfield--input-type-email 
-gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description 
-field_description_below hidden_label field_validation_below gfield_visibility_visible" data-jsreload="field_2_4">
- <div class="ginput_container ginput_container_email">
- <input name="input_4" id="input_2_4" type="email" value="" class="large" 
-placeholder="Email Address" aria-required="true" aria-invalid="false">
- </div>
- </div>
- <div id="field_2_5" class="gfield gfield--type-select gfield--input-type-select 
-gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description 
-field_description_below hidden_label field_validation_below gfield_visibility_visible" data-jsreload="field_2_5">
- <div class="ginput_container ginput_container_email">
- <input name="input_4" id="input_2_4" type="number" value="" 
-class="large" placeholder="Phone Number" aria-required="true" aria-invalid="false">
- </div>
- </div>
- </div>
- </div>
- <div class="gform-footer gform_footer top_label">
- <input type="submit" id="gform_submit_button_2" class="gform_button button 
-gform-button--width-full" onclick="gform.submission.handleButtonClick(this)" value="Submit">
- <input type="hidden" name="gform_ajax" 
-value="form_id=2&amp;title=&amp;description=&amp;tabindex=0&amp;theme=orbital">
- <input type="hidden" class="gform_hidden" name="gform_submission_method" 
-data-js="gform_submission_method_2" value="iframe">
- <input type="hidden" class="gform_hidden" name="is_submit_2" value="1">
- <input type="hidden" class="gform_hidden" name="gform_submit" value="2">
- <input type="hidden" class="gform_hidden" name="gform_unique_id" value="">
- <input type="hidden" class="gform_hidden" name="state_2" 
-value="WyJ7XCI1XCI6W1wiMzU1NmRmMWVlMWY1ZTljMGJlZDA3M2I2MThjMTgyZTFcIixcIjAzZjc2ZDQ5
-NzliMzY3NmZiMjc2ZThlMDFiMGQzZmMwXCIsXCJlYjI4MTZlMjdmN2JlZWUyNTAwZTI1YjVlYmIzMDBkYlwi
-LFwiYzJkY2E5MmEzNWVjNjI3ZTcxODJhZDQ4YjMyM2UyN2NcIixcImY3M2FiODQyNGE0ZjBmZjhlOWEzYzE
-2ZTk4ODQ3ZmMyXCJdfSIsIjMwMTJiZWQ3OWQzNTkyZmZkZTJhNDEyYzEwNTI5MDc2Il0=">
- <input type="hidden" autocomplete="off" class="gform_hidden" 
-name="gform_target_page_number_2" id="gform_target_page_number_2" value="0">
- <input type="hidden" autocomplete="off" class="gform_hidden" 
-name="gform_source_page_number_2" id="gform_source_page_number_2" value="1">
- <input type="hidden" name="gform_field_values" value="">
- </div>
- <input type="hidden" name="version_hash" 
-value="86d6c13474e0ddf04e7f50c85cf20f52">
- </form>
- </div>
- </aside>
- <aside id="af_acf_about-2" class="widget widget_af_acf_about">
- <div class="Widget-ACF-About CLR">
- <a href="https://www.facebook.com/">
- <img src="/Static/banner.jgep.jpg" alt="About Daily Gym" class="attachment-full 
-size-full">
- <span class="Widget-ACF-About-Mask"></span>
- <span class="Widget-ACF-About-Meta">
- <h2>About</h2>
- <h3>Daily's Story and Mission</h3>
- <span class="Widget-ACF-About-More Trans">
- <span class="IBVM">Read More</span>
- <i class="fa fa-arrow-right IBVM"></i>
- </span>
- </span>
- </a>
- </div>
- </aside>
- </section>
- </div>
- </div>
- </div>
- </div>
+    <div id="Wrapper-Outer">
+        <div id="Wrapper-Inner">
+            <header class="header-top header-desktop">
+                <div class="container header-top-inner">
+                    <div class="header-top-tagline">Your physical health is our priority</div>
+                </div>
+            </header>
+            <header class="header-main header-desktop">
+                <div class="container">
+                    <h1><b>DAILY</b></h1>
+                </div>
+            </header>
+            <header class="header-mobile">
+                <div class="header-main">
+                    <h1><b>DAILY</b></h1>
+                </div>
+                <h4 class="header-tagline">Your physical health is our priority</h4>
+            </header>
+            <div class="content-wrapper container">
+                <main class="content">
+                    <div class="content-left">
+                        <article class="entry">
+                            <header class="entry-header">
+                                <h1 class="entry-title">Enroll in the Daily programs to achieve fitness and greatness as you enjoy world-class gym and yoga services.</h1>
+                            </header>
+                            <div class="entry-main">
+                                <div class="entry-thumb">
+                                    <img src="/Static/samuel-girven-fqMu99l8sqo-unsplash.jpg" alt="Gym Fitness">
+                                </div>
+                                <div class="entry-text">
+                                    <p>Ready to transform your body and mind? At Daily, we offer a modern, fully-equipped fitness center designed for all fitness levels. Whether you're a beginner or a seasoned athlete, our expert trainers provide personalized workout plans tailored to your goals. Enjoy a variety of classes, from strength training and cardio to yoga and high-intensity interval training (HIIT), all in a motivating, supportive environment. Plus, with online classes and virtual training options, you can stay on track anytime, anywhere. Join our community today and unlock your full potential!</p>
+                                    <p>At Daily, you’ll experience a comprehensive fitness journey tailored to your needs. Expect cutting-edge gym equipment, including free weights, cardio machines, and functional training areas. Our certified trainers will guide you through personalized workout programs designed to help you achieve your goals, whether it’s building strength, improving endurance, or losing weight. You’ll also have access to a variety of group classes—such as yoga, cycling, HIIT, and strength training—designed to keep you motivated and challenged. With a clean, welcoming environment, supportive staff, and flexible membership options, we ensure a fitness experience that fits your lifestyle. Join us and start your transformation today!</p>
 
-  
-  <footer class="Footer-Top CLR" style="background-color: #2c3e50; color: white; padding: 2rem 0; text-align: center;">
-      <div class="Footer-Top-Inner CLR" style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
-          <div class="Footer-Button" style="padding: 0.75rem 1.5rem; background-color: #3498db; color: white; border: none; border-radius: 4px; font-size: 1.1rem; cursor: pointer; transition: background-color 0.3s ease; transition: background-color 0.3s ease;" target="" title="Become a Member"
-                 onmouseover="this.style.backgroundColor='#2980b9'"
-                 onmouseout="this.style.backgroundColor='#3498db'">Become a Member</div>
-          <div class="Footer-Top-Right" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; align-items: center;">
-              <div class="Footer-Top-Menu" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
-                  <nav class="Footer-Top-Nav Footer-Top-Nav-Left IBVM LI-Trim" style="display: flex; gap: 1rem; list-style: none; padding: 0; margin: 0; vertical-align: middle; display: inline-block;">
-                      <div class="menu-footer-left-container">
-                          <ul id="menu-footer-left" class="menu" style="list-style: none; padding: 0; margin: 0;">
-                              <li id="menu-item-1064991" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1064991" style="font-size: 1rem; display: inline-block; margin: 0 7px;">
-                                  <div style="color: white; text-decoration: none; transition: color 0.3s ease;"
-                                       onmouseover="this.style.color='#3498db'"
-                                       onmouseout="this.style.color='white'">About</div>
-                              </li>
-                              <li id="menu-item-1078662" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1078662" style="font-size: 1rem; display: inline-block; margin: 0 7px;">
-                                  <div style="color: white; text-decoration: none; transition: color 0.3s ease;"
-                                       onmouseover="this.style.color='#3498db'"
-                                       onmouseout="this.style.color='white'">Contribute</div>
-                              </li>
-                              <li id="menu-item-1064990" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1064989" style="font-size: 1rem; display: inline-block; margin: 0 7px;">
-                                   <div style="color: white; text-decoration: none; transition: color 0.3s ease;"
-                                        onmouseover="this.style.color='#3498db'"
-                                        onmouseout="this.style.color='white'">Contact</div>
-                              </li>
-                              <li id="menu-item-1064989" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1064989" style="font-size: 1rem; display: inline-block; margin: 0 7px;">
-                                  <div style="color: white; text-decoration: none; transition: color 0.3s ease;"
-                                       onmouseover="this.style.color='#3498db'"
-                                       onmouseout="this.style.color='white'">Privacy Policy</div>
-                              </li>
-                          </ul>
-                      </div>
-                  </nav>
-                  <div class="Footer-Nav-Line IBVM" style="height: 1px; background-color: #7f8c8d; margin: 0 1rem; width: 1px; vertical-align: middle; display: inline-block;"></div>
-                  <nav class="Footer-Top-Nav Footer-Top-Nav-Right IBVM LI-Trim" style="display: flex; gap: 1rem; list-style: none; padding: 0; margin: 0; vertical-align: middle; display: inline-block;">
-                      <div class="menu-categories-container">
-                          <ul id="menu-categories-1" class="menu" style="list-style: none; padding: 0; margin: 0;">
-                              <li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1089975" style="font-size: 1rem; display: inline-block; margin: 0 7px;">
-                                  <div style="color: white; text-decoration: none; transition: color 0.3s ease;"
-                                       onmouseover="this.style.color='#3498db'"
-                                       onmouseout="this.style.color='white'">Health</div>
-                              </li>
-                              <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1089778" style="font-size: 1rem; display: inline-block; margin: 0 7px;">
-                                  <div style="color: white; text-decoration: none; transition: color 0.3s ease;"
-                                       onmouseover="this.style.color='#3498db'"
-                                       onmouseout="this.style.color='white'">Professional</div>
-                              </li>
-                              <li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1089779" style="font-size: 1rem; display: inline-block; margin: 0 7px;">
-                                  <div style="color: white; text-decoration: none; transition: color 0.3s ease;"
-                                        onmouseover="this.style.color='#3498db'"
-                                        onmouseout="this.style.color='white'">Conduct Guide Lines</div>
-                              </li>
-                              <li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1060124" style="font-size: 1rem; display: inline-block; margin: 0 7px;">
-                                  <div style="color: white; text-decoration: none; transition: color 0.3s ease;"
-                                       onmouseover="this.style.color='#3498db'"
-                                       onmouseout="this.style.color='white'">Other Services</div>
-                              </li>
-                          </ul>
-                      </div>
-                  </nav>
-              </div>
-
-                  <li class="IBVM" style="display: inline-block; vertical-align: middle;">
-                      <a href="https://www.facebook.com/" target="_blank" title="Follow Us on Facebook" class="Trans" style="color: white; font-size: 1.5rem; transition: color 0.3s ease;"
-                         onmouseover="this.style.color='#3498db'"
-                         onmouseout="this.style.color='white'">
-                          <i class="fa fa-facebook"></i>
-                      </a>
-                  </li>
-                  <li class="IBVM" style="display: inline-block; vertical-align: middle;">
-                      <a href="https://instagram.com/" target="_blank" title="Follow Us on Instagram" class="Trans" style="color: white; font-size: 1.5rem; transition: color 0.3s ease;"
-                         onmouseover="this.style.color='#3498db'"
-                         onmouseout="this.style.color='white'">
-                          <i class="fa fa-instagram"></i>
-                      </a>
-                  </li>
-                  <li class="IBVM" style="display: inline-block; vertical-align: middle;">
-                      <a href="https://www.linkedin.com/" target="_blank" title="Connect with Us on LinkedIn" class="Trans" style="color: white; font-size: 1.5rem; transition: color 0.3s ease;"
-                         onmouseover="this.style.color='#3498db'"
-                         onmouseout="this.style.color='white'">
-                          <i class="fa fa-linkedin"></i>
-                      </a>
-                  </li>
-              </ul>
-          </div>
-      </div>
-  </footer>
+                                    <h2>Gym Sector</h2>
+                                    <div class="gallery">
+                                        <figure class="gallery-item">
+                                            <div class="gallery-icon">
+                                                <img src="/Static/sushil-ghimire-5UbIqV58CW8-unsplash.jpg" alt="Gym Equipment">
+                                            </div>
+                                        </figure>
+                                        <figure class="gallery-item">
+                                            <div class="gallery-icon">
+                                                <img src="/Static/daniel-apodaca-WdoQio6HPVA-unsplash.jpg" alt="Personal Training">
+                                            </div>
+                                        </figure>
+                                        <figure class="gallery-item">
+                                            <div class="gallery-icon">
+                                                <img src="/Static/victor-freitas-Yuv-iwByVRQ-unsplash.jpg" alt="Gym Interior">
+                                            </div>
+                                        </figure>
+                                    </div>
+                                    <h2>Yoga Sector</h2>
+                                    <p>Discover inner peace and physical strength with Daily. Our online platform offers a variety of yoga classes for all levels—whether you’re a beginner or advanced practitioner. From relaxing restorative sessions to invigorating vinyasa flows, our experienced instructors guide you through every pose with care and precision. Enjoy live classes, on-demand videos, and personalized yoga plans that fit your schedule and goals. Our community provides a supportive, non-judgmental space for mindfulness, wellness, and growth. Whether you're looking to improve flexibility, reduce stress, or build strength, Daily helps you transform your body and mind. Join today at Daily.</p>
+                                    <p>At Daily, you'll find a comprehensive online platform designed to support your yoga practice from anywhere. Expect a variety of classes catering to all levels—beginner, intermediate, and advanced. Our expert instructors guide you through different styles, including Vinyasa, Hatha, Restorative, and Power Yoga, each aimed at enhancing flexibility, strength, and mindfulness. You'll have access to live, interactive classes, as well as an extensive library of on-demand videos that you can watch at your convenience. Additionally, we offer personalized yoga plans to help you achieve specific goals, whether it's stress reduction, improved posture, or overall wellness. Our supportive community encourages growth and balance, helping you stay committed to your practice.</p>
+                                    <p>We are open from Monday to Sunday, 4:00 AM to 10:00 PM. Get a 20% discount for monthly subscribers. We also offer other services like massage. Make it quick by pressing the submit button to enroll in our plan.</p>
+                                    <div class="gallery">
+                                        <figure class="gallery-item">
+                                            <div class="gallery-icon">
+                                                <img src="/Static/jared-rice-NTyBbu66_SI-unsplash.jpg" alt="Yoga Class">
+                                            </div>
+                                        </figure>
+                                        <figure class="gallery-item">
+                                            <div class="gallery-icon">
+                                                <img src="/Static/antonika-chanel-zTgFtM6M9Gs-unsplash.jpg" alt="Yoga Instructor">
+                                            </div>
+                                        </figure>
+                                        <figure class="gallery-item">
+                                            <div class="gallery-icon">
+                                                <img src="/Static/tammy-gann-610V59jwByI-unsplash.jpg" alt="Yoga Pose">
+                                            </div>
+                                        </figure>
+                                    </div>
+                                    <div class="author-box">
+                                        <span>About the Author</span>
+                                        <h3>Daily Gym Staff</h3>
+                                        <p>The Daily Gym Staff is committed to providing you with the best fitness experience. Our certified trainers and instructors are here to help you achieve your health and wellness goals.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <aside class="content-right sidebar">
+                        <section class="widget">
+                            <h2 class="widget-title">Register now</h2>
+                            <form method="post" action="/submit-form">
+                                <h3>Submit your details to be part of the community.</h3>
+                                <div class="gfield">
+                                    <label for="first_name">First Name</label>
+                                    <input name="first_name" id="first_name" type="text" placeholder="First Name" required>
+                                </div>
+                                <div class="gfield">
+                                    <label for="last_name">Last Name</label>
+                                    <input name="last_name" id="last_name" type="text" placeholder="Last Name">
+                                </div>
+                                <div class="gfield">
+                                    <label for="email">Email Address</label>
+                                    <input name="email" id="email" type="email" placeholder="Email Address" required>
+                                </div>
+                                <div class="gfield">
+                                    <label for="phone">Phone Number</label>
+                                    <input name="phone" id="phone" type="tel" placeholder="Phone Number" required>
+                                </div>
+                                <button type="submit" class="gform_button">Submit</button>
+                            </form>
+                        </section>
+                        <section class="widget">
+                            <div class="widget-acf-about">
+                                <a href="https://www.facebook.com/">
+                                    <img src="/Static/banner.jgep.jpg" alt="About Daily Gym">
+                                    <span class="widget-acf-about-mask"></span>
+                                    <span class="widget-acf-about-meta">
+                                        <h2>About</h2>
+                                        <h3>Daily's Story and Mission</h3>
+                                        <span>Read More <i class="fa fa-arrow-right"></i></span>
+                                    </span>
+                                </a>
+                            </div>
+                        </section>
+                    </aside>
+                </main>
+            </div>
+        </div>
+    </div>
+    <footer class="footer-top">
+        <div class="container footer-top-inner">
+            <a href="#" class="footer-button">Become a Member</a>
+            <div class="footer-top-menu">
+                <nav class="footer-top-nav">
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contribute</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <ul class="footer-social">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>
