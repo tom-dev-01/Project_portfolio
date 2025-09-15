@@ -73,7 +73,7 @@
     <div class="container mx-auto px-4 py-10">
         <div class="text-center mb-8">
             <h1 class="text-3xl font-bold text-gray-800 mb-2">My Weather App</h1>
-            <div class="text-gray-600 text-sm">Get current weather and forecast</div>
+            <div class="text-gray-600 text-sm">Portfolio Demo - Returns mock weather data</div>
         </div>
 
         <div class="flex justify-center mb-6">
@@ -95,7 +95,7 @@
             <div id="current-weather" class="mb-4">
                 <p class="text-gray-700">Loading current weather...</p>
             </div>
-            <h2 class="ìtext-2xl font-semibold text-gray-800 mt-8 mb-4">Forecast: --</h2>
+            <h2 class="text-2xl font-semibold text-gray-800 mt-8 mb-4">Forecast: --</h2>
             <div id="forecast-weather" class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <p class="text-gray-700">Loading forecast...</p>
             </div>
@@ -122,27 +122,45 @@
             }, 3000);
         }
 
-        // Function to fetch weather data from OpenWeatherMap API
+        // Demo function for portfolio - returns mock weather data
         async function getWeatherData(location, type = 'weather') {
-            const apiKey = "d9c743b993e464a9e904370e7b22c1e3";  // Replace with your API key
-            let url = '';
-            if (type === 'weather') {
-                url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`;
-            } else if (type === 'forecast') {
-                url = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}&units=metric`;
-            }
-
             loadingOverlay.classList.add('show');
+            
+            // Simulate API delay
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
             try {
-                const response = await fetch(url);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                // Mock data for demo purposes
+                if (type === 'weather') {
+                    return {
+                        name: location || "Demo City",
+                        main: { temp: 22.5, humidity: 65 },
+                        weather: [{ description: "partly cloudy", icon: "02d" }],
+                        wind: { speed: 3.2 },
+                        sys: { 
+                            sunrise: Date.now()/1000 - 3600, 
+                            sunset: Date.now()/1000 + 3600 
+                        }
+                    };
+                } else if (type === 'forecast') {
+                    return {
+                        list: [
+                            {
+                                dt_txt: new Date(Date.now() + 86400000).toISOString().slice(0, 19).replace('T', ' '),
+                                main: { temp: 24.1 },
+                                weather: [{ description: "sunny", icon: "01d" }]
+                            },
+                            {
+                                dt_txt: new Date(Date.now() + 172800000).toISOString().slice(0, 19).replace('T', ' '),
+                                main: { temp: 19.8 },
+                                weather: [{ description: "light rain", icon: "10d" }]
+                            }
+                        ]
+                    };
                 }
-                const data = await response.json();
-                return data;
             } catch (error) {
-                console.error(`Error fetching ${type} data:`, error);
-                showMessage(`Error: ${error.message || 'Failed to fetch data'}`, 'error');
+                console.error(`Error in demo weather function:`, error);
+                showMessage('Demo weather data unavailable', 'error');
                 return null;
             } finally {
                 loadingOverlay.classList.remove('show');
