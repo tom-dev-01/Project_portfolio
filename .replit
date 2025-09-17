@@ -3,7 +3,7 @@ modules = ["web", "python-3.11"]
 
 [nix]
 channel = "stable-24_11"
-packages = ["static-web-server"]
+
 
 [deployment]
 publicDir = "/"
@@ -48,7 +48,7 @@ outputType = "webview"
 
 [[ports]]
 localPort = 80
-externalPort = 80
+externalPort = 3000
 
 [[ports]]
 localPort = 5000
