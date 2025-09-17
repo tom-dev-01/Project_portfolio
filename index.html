@@ -9,6 +9,22 @@
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
    <script src="https://cdn.tailwindcss.com"></script>
+
+   <style>
+       .qr-code {
+         width: 200px; /* Set the desired width */
+         height: 200px; /* Set the desired height */
+         border: 5px solid #4CAF50; /* Add a green border */
+         border-radius: 15px; /* Make the corners rounded */
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+         transition: transform 0.3s ease; /* Smooth hover effect */
+       }
+
+       .qr-code:hover {
+         transform: scale(1.1); /* Slightly enlarge on hover */
+       }
+     </style>
+
    <style>
       body {
          font-family: 'Inter', sans-serif;
@@ -68,16 +84,16 @@
          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
 
-               <h3 class="text-xl font-semibold text-gray-800 mb-2">Contact-Admin</h3>
-               <p class="text-gray-600 mb-4">Designed and implemented interface between clients and administration.
-               Overcame
-               challenges of administration tracking the flow of data from cliens. Achieved Integration of clients
-               and administration</p>
+               <h3 class="text-xl font-semibold text-gray-800 mb-2">Daily Gym
+</h3>
+               <p class="text-gray-600 mb-4">Led the development of Daily Gym. Key
+                                    contributions included, encourages healthy habits and discipline, raising awareness of holistic
+                                    wellness, and enhancing mental well-being. Technologies used: HTML5, CSS3 and JavaScript</p>
                <ul class="list-disc list-inside text-gray-600 mb-4">
-                  <li>Contacts can be retrieved on admin database</li>
-                  <li>Clients can submit their info to the admin</li>
+                  <li>Developed a Full-Stack Application</li>
+                  <li>Implemented Core Features i.e desiged features like user registration</li>
                </ul>
-               <a href="pages/contact.html" class="text-blue-500 hover:text-blue-700 no-underline font-semibold">View
+               <a href="pages/daily.html" class="text-blue-500 hover:text-blue-700 no-underline font-semibold">View
                   Details</a>
             </div>
             <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
@@ -97,16 +113,19 @@
             </div>
             <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
 
-               <h3 class="text-xl font-semibold text-gray-800 mb-2">Daily Gym</h3>
-               <p class="text-gray-600 mb-4">Led the development of Daily Gym. Key
-               contributions included, encourages healthy habits and discipline, raising awareness of holistic
-               wellness, and enhancing mental well-being. Technologies used: HTML5, CSS3 and JavaScript.
+               <h3 class="text-xl font-semibold text-gray-800 mb-2">contact Admin</h3>
+               <p class="text-gray-600 mb-4">Designed and implemented interface between clients and administration.
+                  Overcame
+                  challenges of administration tracking the flow of data from cliens. Achieved Integration of clients
+                  and administration 
+
+
 </p>
                <ul class="list-disc list-inside text-gray-600 mb-4">
-                  <li>Developed a Full-Stack Application</li>
-                  <li>Implemented Core Features i.e desiged features like user registrationli>
+                  <li>Contacts can be retrieved on admin database</li>
+                  <li>Clients can submit their info to the admin</li>
                </ul>
-               <a href="/pages/daily.html" class="text-blue-500 hover:text-blue-700 no-underline font-semibold">View
+               <a href="/pages/contact.html" class="text-blue-500 hover:text-blue-700 no-underline font-semibold">View
                   Details</a>
             </div>
 
@@ -164,32 +183,19 @@
       </div>
    </section>
    <section id="contact" class="bg-gray-200 py-12">
-      <div class="container mx-auto px-4">
-         <h2 class="text-3xl font-semibold text-gray-800 mb-8 text-center">Contact Me</h2>
-         <div class="bg-white rounded-lg shadow-md p-8 max-w-md mx-auto">
-            <form>
-               <div class="mb-4">
-                  <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Your Name</label>
-                  <input type="text" id="name" name="name" class="shadow appearance-none border 
-rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-               </div>
-               <div class="mb-4">
-                  <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Your Email</label>
-                  <input type="email" id="email" name="email" class="shadow appearance-none border 
-rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-               </div>
-               <div class="mb-4">
-                  <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Your
-                     Message</label>
-                  <textarea id="message" name="message" class="shadow appearance-none border 
-rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 
-resize-y"></textarea>
-               </div>
-               <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 
-rounded focus:outline-none focus:shadow-outline">Send Message</button>
-            </form>
-         </div>
-      </div>
+
+       <img src="/Static/qr-code.png" alt="QR Code" class="qr-code">
+
+
+
+
+
+
+
+
+
+
+      
    </section>
    <footer class="bg-gray-800 text-white py-4">
       <div class="container mx-auto px-4 text-center">
