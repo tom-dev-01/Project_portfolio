@@ -1,306 +1,298 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-    <link id="peek-google-fonts" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amiri:400i|Oswald:400">
+    <title>EMA BOUTIQUE</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
     <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
-      * {
-        box-sizing: border-box;
-      }
-      
-      body {
-        font-family: 'Oswald', sans-serif;
-        line-height: 1.6;
-        color: #333;
-      }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f4f0;
+        }
 
-      img.wp-smiley, img.emoji {
-        display: inline !important;
-        border: none !important;
-        box-shadow: none !important;
-        height: 1em !important;
-        width: 1em !important;
-        margin: 0 0.07em !important;
-        vertical-align: -0.1em !important;
-        background: none !important;
-        padding: 0 !important;
-      }
+        .v-button-outer-circle {
+            animation: pulse 2s infinite;
+        }
+        .v-button-outer-circle.has-delay-short {
+            animation-delay: 1s;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.85); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.5; }
+            100% { transform: scale(0.85); opacity: 1; }
+        }
 
-      /*! This file is auto-generated */
-      .wp-block-button__link {
-        color: #fff;
-        background-color: #32373c;
-        border-radius: 9999px;
-        box-shadow: none;
-        text-decoration: none;
-        padding: calc(.667em + 2px) calc(1.333em + 2px);
-        font-size: 1.125em;
-      }
+        .t-discount-box {
+            background-color: #e8e8e8;
+        }
 
-      .wp-block-file__button {
-        background: #32373c;
-      }
-      .slick-slider {
-        position: relative;
-        display: block;
-        box-sizing: border-box;
-        user-select: none;
-        touch-action: pan-y;
-      }
-
-      /* Custom styles for the new sections to match the theme */
-      .section-container {
-        padding: 4rem 1rem;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .section-heading {
-        font-family: 'Amiri', serif;
-        font-size: 2.5rem;
-        font-weight: 400;
-        text-align: center;
-        margin-bottom: 2rem;
-        color: #32373c;
-      }
-
-      .faq-item {
-        border-bottom: 1px solid #e5e7eb;
-      }
-      .faq-question {
-        cursor: pointer;
-        padding: 1rem 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-weight: 600;
-        color: #4a5568;
-      }
-      .faq-answer {
-        padding-bottom: 1rem;
-        color: #718096;
-      }
-      .faq-answer.hidden {
-        display: none;
-      }
-
-      .review-card {
-        background-color: #f9fafb;
-        border-radius: 0.5rem;
-        padding: 1.5rem;
-      }
-
-      .star-rating {
-        color: #ffc107;
-      }
-      
-      .blog-card {
-        border-radius: 0.5rem;
-        overflow: hidden;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-      .blog-card img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-      }
+        /* Styles from the second file */
+        .view-transition {
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        .view-hidden {
+            opacity: 0;
+            transform: scale(0.98);
+            pointer-events: none;
+        }
+        .btn-gradient {
+            background-image: linear-gradient(to right, #8e44ad, #9b59b6);
+        }
     </style>
-  </head>
-  <body>
-    <!-- Existing HTML content from user's file -->
-    <div class="header">
-      <!-- ... header content ... -->
-    </div>
+</head>
+<body class="text-gray-800">
+    <main>
+        <section id="products-page" class="view-transition">
+            <div class="bg-[#f8f8f8] py-5 px-4">
+                <div class="container max-w-5xl mx-auto px-4">
+                    <div class="video-box2 text-center mb-5">
+                        <a href="https://www.youtube.com/" class="video-group relative inline-block">
+                            <div class="v-button is-play absolute inset-0 m-auto w-16 h-16 rounded-full flex items-center justify-center cursor-pointer">
+                                <div class="v-button-circle absolute w-full h-full rounded-full bg-purple-700 opacity-70"></div>
+                                <div class="v-button-outer-circle has-scale-animation absolute w-full h-full rounded-full border-2 border-purple-700"></div>
+                                <div class="v-button-outer-circle has-scale-animation has-delay-short absolute w-full h-full rounded-full border-2 border-purple-700"></div>
+                                <div class="v-button-icon is-play relative z-10 w-8 h-8">
+                                    <svg height="100%" width="100%" fill="#fff">
+                                        <polygon class="triangle" points="5,0 30,15 5,30" viewBox="0 0 30 15"></polygon>
+                                    </svg>
+                                </div>
+                            </div>
+                            <img fetchpriority="high" src="/Static/jason-briscoe-w2uvoJo_woE-unsplash.jpg" width="750" height="301" alt="A person in a stylish jacket sitting at a table with a coffee cup." class="block max-w-full h-auto mx-auto rounded-xl shadow-lg">
+                        </a>
+                    </div>
+                    
+                    <div class="text-wrap mt-5 text-center">
+                        <h1 class="text-4xl font-bold mb-4 font-ernestine">Shop at Ema Boutique like a Bazu</h1>
+                        <p class="text-lg text-gray-600 max-w-3xl mx-auto">Discover the perfect blend of style, elegance, and luxury at EMA Boutique. Our curated collection features high-quality, unique pieces designed to make you feel confident and beautiful, whether you're looking for casual chic or an unforgettable evening look. At EMA, we offer personalized service to help you find the perfect fit, with the latest trends and timeless designs that cater to every occasion. Step into our boutique for a shopping experience like no other, where fashion meets individuality and craftsmanship. Visit EMA Boutique today and let us help you elevate your wardrobe with pieces that truly speak to you.</p>
+                    </div>
 
-    <!-- ... existing sections ... -->
-    <div class="col-lg-3 col-md-4 col-sm-6 feature-col" style="" aria-hidden="false" tabindex="-1" role="tabpanel" id="slick-slide91" aria-describedby="slick-slide-control91">
-      <div class="feature-col__img">
-        <img width="74" height="74" alt="" data-lazy-src="/Static/download.svg" class="entered lazyloaded" src="/Static/download.svg" data-ll-status="loaded"><noscript><img width="74" height="74" src="Static/shield-check-1.svg" loading="lazy" alt=""></noscript>
-      </div>
-      <p>Every clothe line is created to showcase the very best of Ema.</p>
-    </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 feature-col" style="" aria-hidden="true" tabindex="-1" role="tabpanel" id="slick-slide93" aria-describedby="slick-slide-control93">
-      <div class="feature-col__img">
-        <img width="84" height="74" alt="" data-lazy-src="/Static/icon_2.svg" class="entered lazyloaded" src="/Static/icon_2.svg" data-ll-status="loaded"><noscript><img width="84" height="74" src="/Static/icon_2.svg" loading="lazy" alt=""></noscript>
-      </div>
-      <p>With us you are treated like family everywhere we go!</p>
-    </div>
-    <!-- ... end of existing sections ... -->
+                    <div class="t-discount-box mt-5 p-5 rounded-lg flex items-center gap-5 md:flex-row flex-col text-center md:text-left">
+                        <div class="icon-group">
+                            <svg width="120" height="120" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="1" y="1" width="72" height="72" rx="36" fill="#8B5C92"></rect>
+                                <path d="M28.3118 35.4957C24.5584 35.4957 21.5059 32.4424 21.5059 28.6897C21.5059 24.937 24.5592 21.8837 28.3118 21.8837C32.0645 21.8837 35.1178 24.937 35.1178 28.6897C35.1178 32.4424 32.0653 35.4957 28.3118 35.4957ZM28.3118 25.1328C26.3502 25.1328 24.7549 26.7281 24.7549 28.6897C24.7549 30.6513 26.3502 32.2466 28.3118 32.2466C30.2735 32.2466 31.8687 30.6513 31.8687 28.6897C31.8687 26.7281 30.2735 25.1328 28.3118 25.1328Z" fill="#FFA300"></path>
+                                <path d="M48.0785 22.409L23.4443 49.3122L25.8405 51.5063L50.4747 24.6031L48.0785 22.409Z" fill="#FFA300"></path>
+                                <path d="M44.8489 52.0342C41.0963 52.0342 38.043 48.9809 38.043 45.2274C38.043 41.4748 41.0963 38.4214 44.8489 38.4214C48.6024 38.4214 51.6557 41.4748 51.6557 45.2274C51.6557 48.9809 48.6024 52.0342 44.8489 52.0342ZM44.8489 41.6705C42.8881 41.6705 41.292 43.2666 41.292 45.2274C41.292 47.189 42.8881 48.7851 44.8489 48.7851C46.8106 48.7851 48.4067 47.189 48.4067 45.2274C48.4067 43.2666 46.8106 41.6705 44.8489 41.6705Z" fill="#FFA300"></path>
+                            </svg>
+                        </div>
+                        <div class="text-wrap">
+                            <h3 class="text-2xl font-bold mb-2 font-ernestine">Order now and save 10% on ANY other brands across ALL our cities!</h3>
+                            <p>3 countries, 47 cities, 50+ clothe brands. Order now and get a special loyalty code for 10% off any other package.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="container max-w-5xl mx-auto px-4 py-8">
+                <header class="text-center mb-8">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900">Featured Products</h2>
+                    <p class="text-gray-600 mt-2">Explore our latest collection of stylish and elegant pieces.</p>
+                </header>
+                <div id="product-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    </div>
+            </section>
+        </section>
 
-    <!-- New sections added below -->
-
-    <!-- Track Delivery Section -->
-    <div id="track-delivery" class="section-container bg-gray-50 rounded-lg shadow-md mt-12 mb-12">
-      <h2 class="section-heading">Track Your Order</h2>
-      <div class="max-w-xl mx-auto text-center">
-        <p class="text-gray-600 mb-6">Enter your tracking number below to see the status of your order.</p>
-        <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-          <input type="text" id="tracking-input" placeholder="Enter tracking number" class="p-3 border border-gray-300 rounded-full w-full sm:w-80 focus:outline-none focus:ring-2 focus:ring-gray-500">
-          <button onclick="trackOrder()" class="bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-gray-800 transition-colors duration-300">Track Order</button>
-        </div>
-        <div id="tracking-status" class="mt-6 p-4 bg-white rounded-lg border border-gray-200 text-left text-gray-800 hidden">
-          <p class="font-bold">Status:</p>
-          <p id="status-text"></p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Boutique Guide Section -->
-    <div id="boutique-guide" class="section-container mt-12 mb-12">
-      <h2 class="section-heading">Boutique Style Guide</h2>
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div class="guide-content">
-          <p class="text-gray-600 mb-4">Welcome to our comprehensive style guide, your personal assistant for curating the perfect wardrobe. Here, we share tips on how to mix and match our pieces, choose the right accessories, and stay on top of the latest fashion trends.</p>
-          <p class="text-gray-600 mb-4">Our boutique guide is designed to empower you with confidence and creativity. From selecting the perfect outfit for a special occasion to building a versatile capsule wardrobe, we have you covered.</p>
-          <a href="#" class="inline-block bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-gray-800 transition-colors duration-300">Explore the Guide</a>
-        </div>
-        <div class="guide-image rounded-lg overflow-hidden shadow-lg">
-          <img src="https://placehold.co/600x400/222222/FFF?text=Style+Guide" alt="Style Guide Image" class="w-full h-auto">
-        </div>
-      </div>
-    </div>
-
-    <!-- Reviews Section -->
-    <div id="reviews" class="section-container bg-gray-50 mt-12 mb-12 rounded-lg shadow-md">
-      <h2 class="section-heading">Customer Reviews</h2>
-      <div class="grid md:grid-cols-3 gap-8 text-center">
-        <div class="review-card shadow-md">
-          <div class="star-rating mb-2">★★★★★</div>
-          <p class="text-gray-700">"Absolutely love the quality and design of the clothes! The material is top-notch and they fit perfectly. Highly recommend!"</p>
-          <p class="mt-4 font-bold">- Sarah J.</p>
-        </div>
-        <div class="review-card shadow-md">
-          <div class="star-rating mb-2">★★★★★</div>
-          <p class="text-gray-700">"The customer service was excellent and the delivery was so fast! The outfit was exactly as pictured. I'll definitely be a returning customer."</p>
-          <p class="mt-4 font-bold">- Alex P.</p>
-        </div>
-        <div class="review-card shadow-md">
-          <div class="star-rating mb-2">★★★★★</div>
-          <p class="text-400">"I've never felt more confident in an outfit. The unique designs really stand out and I get so many compliments. Thank you!"</p>
-          <p class="mt-4 font-bold">- Emily R.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Blogs Section -->
-    <div id="blogs" class="section-container mt-12 mb-12">
-      <h2 class="section-heading">Our Latest Blogs</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="blog-card">
-          <img src="https://placehold.co/400x250/333333/FFF?text=Blog+Post+1" alt="Blog Post 1">
-          <div class="p-4">
-            <h3 class="font-bold text-xl mb-2 text-gray-800">Summer Fashion Trends</h3>
-            <p class="text-gray-600 text-sm">Discover the must-have pieces for your summer wardrobe and how to style them effortlessly.</p>
-            <a href="#" class="block mt-4 text-sm text-black hover:underline font-semibold">Read More &rarr;</a>
-          </div>
-        </div>
-        <div class="blog-card">
-          <img src="https://placehold.co/400x250/333333/FFF?text=Blog+Post+2" alt="Blog Post 2">
-          <div class="p-4">
-            <h3 class="font-bold text-xl mb-2 text-gray-800">Caring for Your Garments</h3>
-            <p class="text-gray-600 text-sm">Learn the best practices for washing and storing your clothes to make them last longer.</p>
-            <a href="#" class="block mt-4 text-sm text-black hover:underline font-semibold">Read More &rarr;</a>
-          </div>
-        </div>
-        <div class="blog-card">
-          <img src="https://placehold.co/400x250/333333/FFF?text=Blog+Post+3" alt="Blog Post 3">
-          <div class="p-4">
-            <h3 class="font-bold text-xl mb-2 text-gray-800">Fall Capsule Wardrobe</h3>
-            <p class="text-gray-600 text-sm">Build a versatile and stylish wardrobe for the fall season with our curated selection.</p>
-            <a href="#" class="block mt-4 text-sm text-black hover:underline font-semibold">Read More &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- FAQs Section -->
-    <div id="faqs" class="section-container bg-gray-50 mt-12 mb-12 rounded-lg shadow-md">
-      <h2 class="section-heading">Frequently Asked Questions</h2>
-      <div class="max-w-3xl mx-auto">
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <p>What is your return policy?</p>
-            <svg class="w-6 h-6 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-          </div>
-          <div class="faq-answer hidden">
-            <p>You can return any item within 30 days of purchase, provided it is unworn and has the original tags attached. Please see our full return policy for more details.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <p>How do I find the right size?</p>
-            <svg class="w-6 h-6 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-          </div>
-          <div class="faq-answer hidden">
-            <p>We provide a detailed size chart on each product page. You can also contact our customer service team for personalized sizing advice.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            <p>Do you ship internationally?</p>
-            <svg class="w-6 h-6 transition-transform transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-          </div>
-          <div class="faq-answer hidden">
-            <p>Yes, we ship to most countries. Shipping costs and delivery times vary by destination. You can find more information during the checkout process.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Existing footer content from user's file -->
-    <div class="footer">
-      <!-- ... footer content ... -->
-    </div>
+        <section id="order-page" class="hidden view-transition view-hidden container max-w-5xl mx-auto px-4 py-8">
+            <header class="mb-8 flex items-center justify-between">
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900">Your Order</h1>
+                    <p class="text-gray-600 mt-2">Quickly confirm your purchase.</p>
+                </div>
+                <button id="back-to-products-btn" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                    &larr; Back to Products
+                </button>
+            </header>
+            <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col md:flex-row items-center gap-8">
+                <img id="order-product-image" src="" alt="Selected product image" class="w-full md:w-1/3 h-auto object-cover rounded-xl">
+                <div class="flex-1 text-center md:text-left">
+                    <h2 id="order-product-name" class="text-3xl font-bold mb-2"></h2>
+                    <p id="order-product-description" class="text-gray-600 mb-4"></p>
+                    <p id="order-product-price" class="text-4xl font-extrabold text-purple-700 mb-6"></p>
+                    <button class="w-full btn-gradient text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                        Confirm Purchase
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <section id="details-page" class="hidden view-transition view-hidden container max-w-5xl mx-auto px-4 py-8">
+            <header class="mb-8 text-right">
+                <button id="back-to-products-btn-details" class="bg-white hover:bg-gray-100 text-gray-800 font-bold py-2 px-4 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                    &larr; Back to Products
+                </button>
+            </header>
+            <div class="bg-white p-8 rounded-2xl shadow-lg grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <img id="details-product-image" src="" alt="Selected product image" class="w-full h-auto object-cover rounded-xl shadow-md">
+                </div>
+                <div class="flex flex-col justify-center">
+                    <span id="details-product-category" class="text-sm font-bold text-purple-600 uppercase mb-2"></span>
+                    <h2 id="details-product-name" class="text-4xl font-bold mb-4 text-gray-900"></h2>
+                    <p id="details-product-description" class="text-gray-600 mb-6 text-lg"></p>
+                    <div class="mb-6">
+                        <p id="details-product-price" class="text-5xl font-extrabold text-purple-700"></p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <div class="flex items-center justify-between mb-4">
+                            <label for="quantity" class="font-bold text-gray-700">Quantity:</label>
+                            <div class="flex items-center border border-gray-300 rounded-lg">
+                                <button id="quantity-minus" class="px-3 py-1 text-lg font-bold text-gray-600 hover:bg-gray-200 rounded-l-lg">-</button>
+                                <span id="quantity-value" class="px-4 text-lg">1</span>
+                                <button id="quantity-plus" class="px-3 py-1 text-lg font-bold text-gray-600 hover:bg-gray-200 rounded-r-lg">+</button>
+                            </div>
+                        </div>
+                        <button class="w-full btn-gradient text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 flex items-center justify-center">
+                            <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+                        </button>
+                        <div class="text-center text-green-600 font-semibold mt-3 text-sm">
+                            <i class="fas fa-truck"></i> Free Shipping on all orders!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script>
-      // JavaScript for Track Delivery
-      function trackOrder() {
-        const input = document.getElementById('tracking-input').value.trim();
-        const statusDiv = document.getElementById('tracking-status');
-        const statusText = document.getElementById('status-text');
+        // --- DATA ------------------------------------------------------------------
+        const products = [
+            { id: 1, name: 'Stylish Shorts', category: 'Shorts', description: 'Discover stylish, comfortable shorts! Perfect for every occasion, our collection offers flattering fits, vibrant colors, and premium quality.', price: 'KSH 450', imageUrl: 'https://placehold.co/660x420/7c50a1/ffffff?text=Stylish+Shorts' },
+            { id: 2, name: 'Men\'s Collection', category: 'Shirts, Trousers, Belts & Shoes', description: 'Shop trendy t-shirts, stylish belts, sleek trousers, and elegant watches. Our collection blends comfort and sophistication.', price: 'KSH 350', imageUrl: 'https://placehold.co/660x420/ff5c39/ffffff?text=Men\'s+Collection' },
+            { id: 3, name: 'Elegant Hijabs', category: 'Hijabs', description: 'Discover the perfect hijabs! Soft, breathable fabrics in vibrant colors and elegant patterns, ensuring comfort and sophistication.', price: 'KSH 3000', imageUrl: 'https://placehold.co/660x420/2ecc71/ffffff?text=Elegant+Hijabs' },
+            { id: 4, name: 'Chic Dresses', category: 'Dresses', description: 'Our dresses are the epitome of elegance—crafted with luxurious fabrics, impeccable fits, and stunning designs for any occasion.', price: 'KSH 2000', imageUrl: 'https://placehold.co/660x420/3498db/ffffff?text=Chic+Dresses' },
+            { id: 5, name: 'Full Suites', category: 'Full Suites', description: 'These suits offer timeless sophistication—tailored to perfection with premium fabrics, flattering cuts, and sharp details.', price: 'KSH 7000', imageUrl: 'https://placehold.co/660x420/9b59b6/ffffff?text=Full+Suites' },
+            { id: 6, name: 'Versatile Jackets', category: 'Jackets', description: 'Our jackets combine style and function—crafted from luxurious materials, with sleek cuts and versatile designs to elevate any outfit.', price: 'KSH 1500', imageUrl: 'https://placehold.co/660x420/34495e/ffffff?text=Versatile+Jackets' }
+        ];
 
-        if (input === '') {
-          statusText.textContent = 'Please enter a valid tracking number.';
-          statusDiv.classList.remove('hidden');
-          return;
-        }
-
-        const randomNumber = Math.random();
-        let status = '';
-        if (randomNumber < 0.33) {
-          status = 'Shipped - The package is on its way to you.';
-        } else if (randomNumber < 0.66) {
-          status = 'Out for Delivery - Your package will arrive today!';
-        } else {
-          status = 'Delivered - Your package has been delivered successfully.';
-        }
-
-        statusText.textContent = status;
-        statusDiv.classList.remove('hidden');
-      }
-
-      // JavaScript for FAQs accordion
-      function toggleFaq(element) {
-        const answer = element.nextElementSibling;
-        const icon = element.querySelector('svg');
-        const isHidden = answer.classList.contains('hidden');
+        // --- DOM ELEMENTS ----------------------------------------------------------
+        const productsPage = document.getElementById('products-page');
+        const orderPage = document.getElementById('order-page');
+        const detailsPage = document.getElementById('details-page');
+        const productListContainer = document.getElementById('product-list');
         
-        // Hide all other answers
-        document.querySelectorAll('.faq-answer').forEach(ans => ans.classList.add('hidden'));
-        document.querySelectorAll('.faq-question svg').forEach(svg => svg.style.transform = 'rotate(0deg)');
+        // Buttons
+        const backToProductsBtn = document.getElementById('back-to-products-btn');
+        const backToProductsBtnDetails = document.getElementById('back-to-products-btn-details');
 
-        if (isHidden) {
-          answer.classList.remove('hidden');
-          icon.style.transform = 'rotate(180deg)';
-        } else {
-          answer.classList.add('hidden');
-          icon.style.transform = 'rotate(0deg)';
+        // Order page elements
+        const orderProductImage = document.getElementById('order-product-image');
+        const orderProductName = document.getElementById('order-product-name');
+        const orderProductDescription = document.getElementById('order-product-description');
+        const orderProductPrice = document.getElementById('order-product-price');
+        
+        // Details page elements
+        const detailsProductImage = document.getElementById('details-product-image');
+        const detailsProductCategory = document.getElementById('details-product-category');
+        const detailsProductName = document.getElementById('details-product-name');
+        const detailsProductDescription = document.getElementById('details-product-description');
+        const detailsProductPrice = document.getElementById('details-product-price');
+        const quantityMinus = document.getElementById('quantity-minus');
+        const quantityPlus = document.getElementById('quantity-plus');
+        const quantityValue = document.getElementById('quantity-value');
+
+        // --- FUNCTIONS -------------------------------------------------------------
+        function renderProducts() {
+            productListContainer.innerHTML = '';
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-2 transition-transform duration-300';
+                productCard.innerHTML = `
+                    <div class="relative">
+                        <div class="absolute top-2 left-0 bg-purple-600 text-white text-sm font-bold py-1 px-3 rounded-r-full z-10">${product.category}</div>
+                        <img src="${product.imageUrl}" alt="${product.name}" class="w-full h-56 object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">${product.name}</h3>
+                        <p class="text-gray-700 mb-4 flex-grow">${product.description}</p>
+                        <div class="mt-auto">
+                            <div class="text-2xl font-extrabold text-purple-700 text-right mb-4">${product.price}</div>
+                            <div class="flex space-x-2">
+                                <button class="order-btn flex-1 bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-lg shadow-md" data-product-id="${product.id}">Order Now</button>
+                                <button class="view-details-btn flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg shadow-md" data-product-id="${product.id}">View Details</button>
+                            </div>
+                        </div>
+                    </div>`;
+                productListContainer.appendChild(productCard);
+            });
         }
-      }
-    </script>
-    <script async="" src=""></script>
-  </body>
-</html>
+        
+        function showPage(pageToShow) {
+            const pages = [productsPage, orderPage, detailsPage];
+            pages.forEach(page => {
+                if (page === pageToShow) {
+                    page.classList.remove('hidden');
+                    setTimeout(() => page.classList.remove('view-hidden'), 10);
+                } else {
+                    page.classList.add('view-hidden');
+                    setTimeout(() => page.classList.add('hidden'), 300);
+                }
+            });
+        }
+        
+        function showOrderPage(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            orderProductImage.src = product.imageUrl;
+            orderProductName.textContent = product.name;
+            orderProductDescription.textContent = product.description;
+            orderProductPrice.textContent = product.price;
+            showPage(orderPage);
+        }
+        
+        function showDetailsPage(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            detailsProductImage.src = product.imageUrl;
+            detailsProductCategory.textContent = product.category;
+            detailsProductName.textContent = product.name;
+            detailsProductDescription.textContent = product.description;
+            detailsProductPrice.textContent = product.price;
+            quantityValue.textContent = 1; // Reset quantity
+            showPage(detailsPage);
+        }
 
+        // --- EVENT LISTENERS -------------------------------------------------------
+        document.addEventListener('click', (event) => {
+            const orderButton = event.target.closest('.order-btn');
+            const detailsButton = event.target.closest('.view-details-btn');
+            if (orderButton) {
+                const productId = parseInt(orderButton.dataset.productId, 10);
+                showOrderPage(productId);
+            } else if (detailsButton) {
+                const productId = parseInt(detailsButton.dataset.productId, 10);
+                showDetailsPage(productId);
+            }
+        });
+        
+        backToProductsBtn.addEventListener('click', () => showPage(productsPage));
+        backToProductsBtnDetails.addEventListener('click', () => showPage(productsPage));
+
+        quantityPlus.addEventListener('click', () => {
+            let currentQuantity = parseInt(quantityValue.textContent, 10);
+            quantityValue.textContent = currentQuantity + 1;
+        });
+
+        quantityMinus.addEventListener('click', () => {
+            let currentQuantity = parseInt(quantityValue.textContent, 10);
+            if (currentQuantity > 1) {
+                quantityValue.textContent = currentQuantity - 1;
+            }
+        });
+
+        // --- INITIALIZATION --------------------------------------------------------
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            productsPage.classList.remove('view-hidden');
+        });
+    </script>
+</body>
+</html>
