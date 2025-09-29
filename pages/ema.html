@@ -4,21 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EMA BOUTIQUE</title>
-    <!-- Tailwind CSS for styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
-        /* Use the Inter font family */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f5f4f0; /* A soft background color */
+            background-color: #f5f4f0;
         }
-        /* Smooth transition for view switching */
+
+        .v-button-outer-circle {
+            animation: pulse 2s infinite;
+        }
+        .v-button-outer-circle.has-delay-short {
+            animation-delay: 1s;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.85); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.5; }
+            100% { transform: scale(0.85); opacity: 1; }
+        }
+
+        .t-discount-box {
+            background-color: #e8e8e8;
+        }
+
+        /* Styles from the second file */
         .view-transition {
             transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
@@ -27,140 +43,65 @@
             transform: scale(0.98);
             pointer-events: none;
         }
-        /* Style for the Add to Cart button gradient */
         .btn-gradient {
             background-image: linear-gradient(to right, #8e44ad, #9b59b6);
         }
-    </style>  
-    <style>
-        <style>
-  body, html {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-  }
-  .half-page-container {
-    height: 50vh; /* This sets the container to be exactly half the viewport height */
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 2px solid #ccc; /* A visual separator */
-    box-sizing: border-box; /* Ensures padding and border are included in the height */
-  }
-  .content-wrapper {
-    width: 90%;
-    max-width: 800px;
-    padding: 20px;
-  }
-  .section-text {
-    width: 100%;
-  }
-  /* Your original CSS styles, but contained within the .half-page-container */
-  .section-text--2 {
-    background-color: #f8f8f8;
-    padding: 20px 0;
-  }
-  .container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-  .text-wrap {
-    margin-top: 20px;
-    text-align: center;
-  }
-  .video-box2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .video-box2 img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
-  .t-discount-box {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    background-color: #e8e8e8;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-  }
-  .icon-group {
-    display: flex;
-    justify-content: center;
-  }
-  .t-discount-box h3 {
-    margin: 0;
-  }
-  @media (max-width: 768px) {
-    .t-discount-box {
-      flex-direction: column;
-      text-align: center;
-    }
-  }
-</style>
     </style>
 </head>
 <body class="text-gray-800">
+    <main>
+        <section id="products-page" class="view-transition">
+            <div class="bg-[#f8f8f8] py-5 px-4">
+                <div class="container max-w-5xl mx-auto px-4">
+                    <div class="video-box2 text-center mb-5">
+                        <a href="https://www.youtube.com/" class="video-group relative inline-block">
+                            <div class="v-button is-play absolute inset-0 m-auto w-16 h-16 rounded-full flex items-center justify-center cursor-pointer">
+                                <div class="v-button-circle absolute w-full h-full rounded-full bg-purple-700 opacity-70"></div>
+                                <div class="v-button-outer-circle has-scale-animation absolute w-full h-full rounded-full border-2 border-purple-700"></div>
+                                <div class="v-button-outer-circle has-scale-animation has-delay-short absolute w-full h-full rounded-full border-2 border-purple-700"></div>
+                                <div class="v-button-icon is-play relative z-10 w-8 h-8">
+                                    <svg height="100%" width="100%" fill="#fff">
+                                        <polygon class="triangle" points="5,0 30,15 5,30" viewBox="0 0 30 15"></polygon>
+                                    </svg>
+                                </div>
+                            </div>
+                            <img fetchpriority="high" src="/Static/jason-briscoe-w2uvoJo_woE-unsplash.jpg" width="750" height="301" alt="A person in a stylish jacket sitting at a table with a coffee cup." class="block max-w-full h-auto mx-auto rounded-xl shadow-lg">
+                        </a>
+                    </div>
+                    
+                    <div class="text-wrap mt-5 text-center">
+                        <h1 class="text-4xl font-bold mb-4 font-ernestine">Shop at Ema Boutique like a Bazu</h1>
+                        <p class="text-lg text-gray-600 max-w-3xl mx-auto">Discover the perfect blend of style, elegance, and luxury at EMA Boutique. Our curated collection features high-quality, unique pieces designed to make you feel confident and beautiful, whether you're looking for casual chic or an unforgettable evening look. At EMA, we offer personalized service to help you find the perfect fit, with the latest trends and timeless designs that cater to every occasion. Step into our boutique for a shopping experience like no other, where fashion meets individuality and craftsmanship. Visit EMA Boutique today and let us help you elevate your wardrobe with pieces that truly speak to you.</p>
+                    </div>
 
-    <section class="section-text section-text--2 show-background ">
-  <div class="container">
-    <div class="text">
-
-              <div class="video-box2">
-          <a href="https://www.youtube.com/" data-fancybox="" class="video-group">
-            <div class="v-button is-play">
-              <div class="v-button-circle"></div>
-              <div class="v-button-outer-circle has-scale-animation"></div>
-              <div class="v-button-outer-circle has-scale-animation has-delay-short"></div>
-              <div class="v-button-icon is-play">
-                <svg height="100%" width="100%" fill="#7C50A1">
-                  <polygon class="triangle" points="5,0 30,15 5,30" viewBox="0 0 30 15"></polygon>
-                  <path class="path" d="M5,0 L30,15 L5,30z" fill="none" stroke="#7C50A1" stroke-width="1"></path>
-                </svg>
-              </div>
+                    <div class="t-discount-box mt-5 p-5 rounded-lg flex items-center gap-5 md:flex-row flex-col text-center md:text-left">
+                        <div class="icon-group">
+                            <svg width="120" height="120" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="1" y="1" width="72" height="72" rx="36" fill="#8B5C92"></rect>
+                                <path d="M28.3118 35.4957C24.5584 35.4957 21.5059 32.4424 21.5059 28.6897C21.5059 24.937 24.5592 21.8837 28.3118 21.8837C32.0645 21.8837 35.1178 24.937 35.1178 28.6897C35.1178 32.4424 32.0653 35.4957 28.3118 35.4957ZM28.3118 25.1328C26.3502 25.1328 24.7549 26.7281 24.7549 28.6897C24.7549 30.6513 26.3502 32.2466 28.3118 32.2466C30.2735 32.2466 31.8687 30.6513 31.8687 28.6897C31.8687 26.7281 30.2735 25.1328 28.3118 25.1328Z" fill="#FFA300"></path>
+                                <path d="M48.0785 22.409L23.4443 49.3122L25.8405 51.5063L50.4747 24.6031L48.0785 22.409Z" fill="#FFA300"></path>
+                                <path d="M44.8489 52.0342C41.0963 52.0342 38.043 48.9809 38.043 45.2274C38.043 41.4748 41.0963 38.4214 44.8489 38.4214C48.6024 38.4214 51.6557 41.4748 51.6557 45.2274C51.6557 48.9809 48.6024 52.0342 44.8489 52.0342ZM44.8489 41.6705C42.8881 41.6705 41.292 43.2666 41.292 45.2274C41.292 47.189 42.8881 48.7851 44.8489 48.7851C46.8106 48.7851 48.4067 47.189 48.4067 45.2274C48.4067 43.2666 46.8106 41.6705 44.8489 41.6705Z" fill="#FFA300"></path>
+                            </svg>
+                        </div>
+                        <div class="text-wrap">
+                            <h3 class="text-2xl font-bold mb-2 font-ernestine">Order now and save 10% on ANY other brands across ALL our cities!</h3>
+                            <p>3 countries, 47 cities, 50+ clothe brands. Order now and get a special loyalty code for 10% off any other package.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <section class="container max-w-5xl mx-auto px-4 py-8">
+                <header class="text-center mb-8">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900">Featured Products</h2>
+                    <p class="text-gray-600 mt-2">Explore our latest collection of stylish and elegant pieces.</p>
+                </header>
+                <div id="product-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    </div>
+            </section>
+        </section>
 
-            <img fetchpriority="high" src="/Static/jason-briscoe-w2uvoJo_woE-unsplash.jpg" width="750" height="301" alt="roma">          </a>
-        </div>
-
-      <div class="text-wrap">
-        <h2 style="text-align: center; font-family: ff-ernestine-web-pro, Bangla1007, sans-serif;">Shop at Ema Boutique like a Bazu</h2>
-<p style="text-align: center;">Discover the perfect blend of style, elegance, and luxury at EMA Boutique. Our curated collection features high-quality, unique pieces designed to make you feel confident and beautiful, whether you're looking for casual chic or an unforgettable evening look. At EMA, we offer personalized service to help you find the perfect fit, with the latest trends and timeless designs that cater to every occasion. Step into our boutique for a shopping experience like no other, where fashion meets individuality and craftsmanship. Visit EMA Boutique today and let us help you elevate your wardrobe with pieces that truly speak to you.
-</p>
-      </div>
-
-              <div class="t-discount-box row align-items-center">
-          <div class="col-lg-auto">
-            <div class="icon-group" style="font-family: icomoon, Bangla1007, sans-serif;">
-              <svg width="120" height="120" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg" style="font-family: icomoon, Bangla1007, sans-serif;">
-                <rect x="1" y="1" width="72" height="72" rx="36" fill="#8B5C92"></rect>
-                <path d="M28.3118 35.4957C24.5584 35.4957 21.5059 32.4424 21.5059 28.6897C21.5059 24.937 24.5592 21.8837 28.3118 21.8837C32.0645 21.8837 35.1178 24.937 35.1178 28.6897C35.1178 32.4424 32.0653 35.4957 28.3118 35.4957ZM28.3118 25.1328C26.3502 25.1328 24.7549 26.7281 24.7549 28.6897C24.7549 30.6513 26.3502 32.2466 28.3118 32.2466C30.2735 32.2466 31.8687 30.6513 31.8687 28.6897C31.8687 26.7281 30.2735 25.1328 28.3118 25.1328Z" fill="#FFA300"></path>
-                <path d="M48.0785 22.409L23.4443 49.3122L25.8405 51.5063L50.4747 24.6031L48.0785 22.409Z" fill="#FFA300"></path>
-                <path d="M44.8489 52.0342C41.0963 52.0342 38.043 48.9809 38.043 45.2274C38.043 41.4748 41.0963 38.4214 44.8489 38.4214C48.6024 38.4214 51.6557 41.4748 51.6557 45.2274C51.6557 48.9809 48.6024 52.0342 44.8489 52.0342ZM44.8489 41.6705C42.8881 41.6705 41.292 43.2666 41.292 45.2274C41.292 47.189 42.8881 48.7851 44.8489 48.7851C46.8106 48.7851 48.4067 47.189 48.4067 45.2274C48.4067 43.2666 46.8106 41.6705 44.8489 41.6705Z" fill="#FFA300"></path>
-              </svg>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="text-wrap">
-              <h3 style="font-family: ff-ernestine-web-pro, Bangla1007, sans-serif;">Order now and save 10% on ANY other brands across ALL our cities!</h3>
-<p>3 countries, 47 cities, 50+ clothe brands. Order now and get a special loyalty code for 10% off any other package.</p>
-            </div>
-          </div>
-
-
-
-        </div>
-          </div>
-  </div>
-</section>
-        <section id="order-page" class="hidden view-transition view-hidden">
-             <header class="mb-8 flex items-center justify-between">
+        <section id="order-page" class="hidden view-transition view-hidden container max-w-5xl mx-auto px-4 py-8">
+            <header class="mb-8 flex items-center justify-between">
                 <div>
                     <h1 class="text-3xl md:text-4xl font-bold text-gray-900">Your Order</h1>
                     <p class="text-gray-600 mt-2">Quickly confirm your purchase.</p>
@@ -182,31 +123,23 @@
             </div>
         </section>
         
-        <!-- ===================================================================== -->
-        <!-- View 3: Attractive Product Details Page                               -->
-        <!-- ===================================================================== -->
-        <section id="details-page" class="hidden view-transition view-hidden">
+        <section id="details-page" class="hidden view-transition view-hidden container max-w-5xl mx-auto px-4 py-8">
             <header class="mb-8 text-right">
-                 <button id="back-to-products-btn-details" class="bg-white hover:bg-gray-100 text-gray-800 font-bold py-2 px-4 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                <button id="back-to-products-btn-details" class="bg-white hover:bg-gray-100 text-gray-800 font-bold py-2 px-4 rounded-lg shadow-md transition-transform transform hover:scale-105">
                     &larr; Back to Products
                 </button>
             </header>
             <div class="bg-white p-8 rounded-2xl shadow-lg grid grid-cols-1 md:grid-cols-2 gap-12">
-                <!-- Left Column: Product Image -->
                 <div>
-                     <img id="details-product-image" src="" alt="Selected product image" class="w-full h-auto object-cover rounded-xl shadow-md">
+                    <img id="details-product-image" src="" alt="Selected product image" class="w-full h-auto object-cover rounded-xl shadow-md">
                 </div>
-                <!-- Right Column: Product Info -->
                 <div class="flex flex-col justify-center">
                     <span id="details-product-category" class="text-sm font-bold text-purple-600 uppercase mb-2"></span>
                     <h2 id="details-product-name" class="text-4xl font-bold mb-4 text-gray-900"></h2>
                     <p id="details-product-description" class="text-gray-600 mb-6 text-lg"></p>
-                    
                     <div class="mb-6">
                         <p id="details-product-price" class="text-5xl font-extrabold text-purple-700"></p>
                     </div>
-
-                    <!-- Interactive Add to Cart Section -->
                     <div class="bg-gray-50 p-4 rounded-lg">
                         <div class="flex items-center justify-between mb-4">
                             <label for="quantity" class="font-bold text-gray-700">Quantity:</label>
@@ -226,8 +159,7 @@
                 </div>
             </div>
         </section>
-
-    </div>
+    </main>
 
     <script>
         // --- DATA ------------------------------------------------------------------
@@ -267,7 +199,6 @@
         const quantityValue = document.getElementById('quantity-value');
 
         // --- FUNCTIONS -------------------------------------------------------------
-
         function renderProducts() {
             productListContainer.innerHTML = '';
             products.forEach(product => {
@@ -279,6 +210,7 @@
                         <img src="${product.imageUrl}" alt="${product.name}" class="w-full h-56 object-cover">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">${product.name}</h3>
                         <p class="text-gray-700 mb-4 flex-grow">${product.description}</p>
                         <div class="mt-auto">
                             <div class="text-2xl font-extrabold text-purple-700 text-right mb-4">${product.price}</div>
@@ -328,8 +260,7 @@
         }
 
         // --- EVENT LISTENERS -------------------------------------------------------
-
-        productListContainer.addEventListener('click', (event) => {
+        document.addEventListener('click', (event) => {
             const orderButton = event.target.closest('.order-btn');
             const detailsButton = event.target.closest('.view-details-btn');
             if (orderButton) {
@@ -362,9 +293,6 @@
             renderProducts();
             productsPage.classList.remove('view-hidden');
         });
-
     </script>
 </body>
 </html>
-
-
